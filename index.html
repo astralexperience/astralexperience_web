@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página oficial de Astral Experience, banda de metal moderno español. Descubre nuestros vídeos en YouTube y nuestra música en Spotify. Visita nuestra tienda online y contáctanos a través de nuestras redes sociales.">
+    <meta name="description" content="Astral Experience es una banda de metal moderno de España. Escucha nuestra música en Spotify, mira los últimos vídeos en YouTube, descubre críticas y consigue merchandising oficial en nuestra tienda online."">
     <meta name="keywords" content="Astral Experience, metal moderno, banda metal español, críticas, vídeos de música, Spotify, redes sociales, tienda online">
     <meta name="author" content="Astral Experience">
 	
-	<meta property="og:title" content="Astral Experience - Página oficial">
+	<meta property="og:title" content="AAstral Experience | Metal moderno en España - Página Oficial">
 	<meta property="og:description" content="Página oficial de Astral Experience, banda de metal moderno español. Descubre nuestros vídeos en YouTube y nuestra música en Spotify. Visita nuestra tienda online y contáctanos a través de nuestras redes sociales.">
 	<meta property="og:image" content="cabecera.jpg"> <!-- Imagen destacada para compartir -->
 	<meta property="og:url" content="www.astralexperience.com">
 	<meta property="og:type" content="website">
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Astral Experience - Página oficial">
+	<meta name="twitter:title" content="Astral Experience | Metal moderno en España - Página Oficial">
 	<meta name="twitter:description" content="Página oficial de Astral Experience, banda de metal moderno español. Descubre nuestros vídeos en YouTube y nuestra música en Spotify. Visita nuestra tienda online y contáctanos a través de nuestras redes sociales.">
 	<meta name="twitter:image" content="cabecera.jpg">
 	
@@ -23,21 +23,24 @@
 	<script type="application/ld+json">
 	{
 	  "@context": "https://schema.org",
-	  "@type": "Organization",
+	  "@type": "MusicGroup",
 	  "name": "Astral Experience",
-	  "url": "www.astralexperience.com",
-	  "logo": "favicon.png",
+	  "genre": "Metal moderno",
+	  "url": "https://www.astralexperience.com",
+	  "logo": "https://www.astralexperience.com/favicon.png",
+	  "image": "https://www.astralexperience.com/cabecera.jpg",
 	  "sameAs": [
 		"https://www.facebook.com/astralexperience",
 		"https://www.instagram.com/astralexperience",
 		"https://www.youtube.com/astralexperience",
-		"https://www.threads.net/@astralexperience"
-	  ],
-	  "description": "Página oficial de Astral Experience, banda de metal moderno español. Descubre nuestros vídeos en YouTube y nuestra música en Spotify. Visita nuestra tienda online y contáctanos a través de nuestras redes sociales."
+		"https://www.threads.net/@astralexperience",
+		"https://www.tiktok.com/@astralexperience",
+		"https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0"
+	  ]
 	}
 	</script>
 	
-    <title>Astral Experience - Página Oficial</title>
+    <title>Astral Experience | Metal moderno en España - Página Oficial</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
@@ -361,6 +364,21 @@
     .video-link:hover .overlay {
         opacity: 1;
     }
+	
+/* Sub-Cabecera */
+.subheader {
+    width: 100%;
+    background-color: #111; /* color de fondo por si la imagen no carga */
+    text-align: center;
+    padding: 2rem 0; /* algo de espacio arriba y abajo */
+}
+
+.subheader-img {
+    width: 50%;      /* la imagen ocupa la mitad del ancho de la pantalla */
+    max-width: 900px; /* límite máximo para que no se haga demasiado grande */
+    height: auto;    /* mantiene la proporción */
+    display: inline-block;
+}
 </style>
 
 </head>
@@ -368,7 +386,7 @@
     <!-- Barra de navegación -->
     <nav class="navbar">
         <a href="#hero"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#reviews"><i class="fas fa-quote-right"></i>Quotes</a>
+        <a href="#subheader"><i class="fas fa-quote-right"></i>PreOrder</a>
         <a href="#videos"><i class="fab fa-youtube"></i> Vídeos</a>
         <a href="#spotify"><i class="fab fa-spotify"></i> Spotify</a>
         <a href="#store"><i class="fas fa-shopping-cart"></i> Tienda</a>
@@ -377,28 +395,36 @@
 
     <!-- Hero -->
     <section id="hero" class="hero">
+		<h1>Astral Experience - Banda de Metal Moderno en España</h1>
         <img src="cabecera.jpg" alt="Astral Experience">
     </section>
 
-    <!-- Críticas -->
-    <section id="reviews" class="reviews">
-        <table>
-            <tr>
-                <td>
-                    <blockquote>"Descubre la nueva Experiencia Astral como no habías oido nunca antes"</blockquote>
-                </td>
-                <td>
-                    <blockquote>"Un directo arrollador que no debes perderte"</blockquote>
-                </td>
-            </tr>
-        </table>
-    </section>
+<!-- Sub-Cabecera -->
+<section id="subheader" class="subheader">
+    <img src="cabecera-preorder.jpg" 
+         alt="Astral Experience - Preorder disponible" 
+         class="subheader-img">
+</section>
 
     <!-- Últimos vídeos -->
 <section id="videos" class="videos">
     <h2>Últimos vídeos</h2>
     <div class="video-thumbnails">
-
+	
+		<a href="https://www.youtube.com/watch?v=SweENqyi5K8" target="_blank" class="video-link">
+            <img src="https://img.youtube.com/vi/SweENqyi5K8/hqdefault.jpg" alt="Astral Experience - Némesis">
+            <div class="overlay">
+                <i class="fab fa-youtube"></i>
+                <p>Ver en YouTube</p>
+            </div>
+        </a>
+		<a href="https://www.youtube.com/watch?v=YtnCqbn9QDs" target="_blank" class="video-link">
+            <img src="https://img.youtube.com/vi/YtnCqbn9QDs/hqdefault.jpg" alt="Astral Experience - Némesis">
+            <div class="overlay">
+                <i class="fab fa-youtube"></i>
+                <p>Ver en YouTube</p>
+            </div>
+        </a>
         <a href="https://www.youtube.com/watch?v=lAb-cHnhmKQ" target="_blank" class="video-link">
             <img src="https://img.youtube.com/vi/lAb-cHnhmKQ/hqdefault.jpg" alt="Astral Experience - Némesis">
             <div class="overlay">
