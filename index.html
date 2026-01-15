@@ -381,12 +381,32 @@
 }
 </style>
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '363467251248997');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=363467251248997&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
 </head>
 <body>
     <!-- Barra de navegación -->
     <nav class="navbar">
         <a href="#hero"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#subheader"><i class="fas fa-quote-right"></i>PreOrder</a>
         <a href="#videos"><i class="fab fa-youtube"></i> Vídeos</a>
         <a href="#spotify"><i class="fab fa-spotify"></i> Spotify</a>
         <a href="#store"><i class="fas fa-shopping-cart"></i> Tienda</a>
@@ -398,13 +418,6 @@
 		<h1>Astral Experience - Banda de Metal Moderno en España</h1>
         <img src="cabecera.jpg" alt="Astral Experience">
     </section>
-
-<!-- Sub-Cabecera -->
-<section id="subheader" class="subheader">
-    <img src="cabecera-preorder.jpg" 
-         alt="Astral Experience - Preorder disponible" 
-         class="subheader-img">
-</section>
 
     <!-- Últimos vídeos -->
 <section id="videos" class="videos">
