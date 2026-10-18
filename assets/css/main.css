@@ -402,3 +402,6 @@ footer { border-top: 1px solid var(--line); }
   .hero-listen{top:auto;bottom:28px}
   .hero-content{padding-bottom:96px}
 }
+.socials a[href="#"]{display:none}
+.release-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+@media(max-width:620px){.release-grid{grid-template-columns:1fr 1fr}}
