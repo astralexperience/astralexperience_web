@@ -45,3 +45,7 @@ Las miniaturas de los vídeos las pone YouTube automáticamente.
 ## No tocar
 
 `politica-de-privacidad.html` y `eliminacion-de-datos.html` (enlazados a la app de Meta).
+
+## Versión
+
+En la cabecera aparece la versión (p. ej. `v0.3.0`). En cada cambio se sube en tres sitios de `index.html`: el `<span class="site-version">`, y el `?v=` de `main.css` y `main.js` (esto obliga al navegador a descargar los estilos y scripts nuevos). Si al recargar ves la versión nueva, estás viendo la web actualizada.
