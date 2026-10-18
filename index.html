@@ -1,522 +1,403 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es" data-theme="frio">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Astral Experience es una banda de metal moderno de España. Escucha nuestra música en Spotify, mira los últimos vídeos en YouTube, descubre críticas y consigue merchandising oficial en nuestra tienda online."">
-    <meta name="keywords" content="Astral Experience, metal moderno, banda metal español, críticas, vídeos de música, Spotify, redes sociales, tienda online">
-    <meta name="author" content="Astral Experience">
-	
-	<meta property="og:title" content="AAstral Experience | Metal moderno en España - Página Oficial">
-	<meta property="og:description" content="Página oficial de Astral Experience, banda de metal moderno español. Descubre nuestros vídeos en YouTube y nuestra música en Spotify. Visita nuestra tienda online y contáctanos a través de nuestras redes sociales.">
-	<meta property="og:image" content="cabecera.jpg"> <!-- Imagen destacada para compartir -->
-	<meta property="og:url" content="www.astralexperience.com">
-	<meta property="og:type" content="website">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Astral Experience | Metal moderno en España - Página Oficial">
-	<meta name="twitter:description" content="Página oficial de Astral Experience, banda de metal moderno español. Descubre nuestros vídeos en YouTube y nuestra música en Spotify. Visita nuestra tienda online y contáctanos a través de nuestras redes sociales.">
-	<meta name="twitter:image" content="cabecera.jpg">
-	
-	<link rel="canonical" href="www.astralexperience.com">
-	<link rel="icon" href="favicon.png" type="image/png">
-	
-	<script type="application/ld+json">
-	{
-	  "@context": "https://schema.org",
-	  "@type": "MusicGroup",
-	  "name": "Astral Experience",
-	  "genre": "Metal moderno",
-	  "url": "https://www.astralexperience.com",
-	  "logo": "https://www.astralexperience.com/favicon.png",
-	  "image": "https://www.astralexperience.com/cabecera.jpg",
-	  "sameAs": [
-		"https://www.facebook.com/astralexperience",
-		"https://www.instagram.com/astralexperience",
-		"https://www.youtube.com/astralexperience",
-		"https://www.threads.net/@astralexperience",
-		"https://www.tiktok.com/@astralexperience",
-		"https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0"
-	  ]
-	}
-	</script>
-	
-    <title>Astral Experience | Metal moderno en España - Página Oficial</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <!-- ═════════════════════════════════════════════════════════════════════
+       SEO · Revisa título y descripción cuando cambie el lanzamiento principal.
+       Título: ≤ 60 caracteres. Descripción: 140-160 caracteres.
+       ═════════════════════════════════════════════════════════════════════ -->
+  <title>Astral Experience · Banda de metal moderno de Valencia</title>
+  <meta name="description" content="Web oficial de Astral Experience, banda de metal moderno de Valencia. Escucha los nuevos singles, mira los videoclips y consulta las próximas fechas de conciertos.">
+  <link rel="canonical" href="https://www.astralexperience.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Astral Experience">
+  <meta name="theme-color" content="#0B1626">
+  <meta name="color-scheme" content="dark">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- Open Graph / redes (la imagen debe ser URL absoluta, 1200×630) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Astral Experience">
+  <meta property="og:url" content="https://www.astralexperience.com/">
+  <meta property="og:title" content="Astral Experience · Banda de metal moderno de Valencia">
+  <meta property="og:description" content="Nuevos singles, videoclips y conciertos de Astral Experience.">
+  <meta property="og:image" content="https://www.astralexperience.com/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Astral Experience">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Estilos -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <link rel="icon" href="assets/img/logo/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-        body {
-            font-family: 'Raleway', sans-serif;
-            background-color: #121212;
-            color: #f5f5f5;
-            scroll-behavior: smooth;
-        }
+  <!-- Rendimiento: fuente propia (sin Google Fonts) e imagen principal con prioridad -->
+  <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/img/hero-mobile.webp" media="(max-width: 47.99rem)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/hero-desktop.webp" media="(min-width: 48rem)" fetchpriority="high">
+  <link rel="preconnect" href="https://i.ytimg.com">
 
-        h1, h2, .navbar a, .social h2, table {
-            text-transform: uppercase;
-        }
+  <!-- Recupera el tema elegido (frío/cálido) antes de pintar, para evitar parpadeo -->
+  <script>try{var t=localStorage.getItem('ae-theme');if(t==='calido'||t==='frio')document.documentElement.dataset.theme=t}catch(e){}</script>
 
-        /* Cabecera de navegación */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 1rem 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/main.js" defer></script>
 
-        .navbar a {
-            color: #f5f5f5;
-            text-decoration: none;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .navbar a:hover {
-            color: #ff5722;
-            transform: scale(1.1);
-        }
-
-        /* Hero - Foto de cabecera */
-		
-		.hero {
-    position: relative;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-}
-
-.hero::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.6); /* Oscurece la imagen */
-}
-
-        /* Sección de críticas */
-        .reviews {
-            padding: 4rem 1rem;
-            text-align: center;
-            background-color: #1a1a1a;
-        }
-
-        .reviews h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        table {
-            width: 80%;
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
-
-        td {
-            border: 1px solid #444;
-            padding: 2rem;
-            vertical-align: top;
-        }
-
-        blockquote {
-            font-size: 1.5rem;
-            font-style: italic;
-            text-transform: none;
-            margin-bottom: 1rem;
-        }
-
-        cite {
-            font-size: 1rem;
-            font-style: normal;
-            display: block;
-            text-align: center;
-            color: #bbb;
-        }
-
-        /* Últimos vídeos */
-        .videos {
-            padding: 4rem 1rem;
-            text-align: center;
-            background-color: #181818;
-        }
-
-        .videos h2 {
-            margin-bottom: 2rem;
-        }
-
-        .videos iframe {
-            width: 100%;
-            max-width: 560px;
-            height: 315px;
-            margin: 1rem auto;
-        }
-
-        /* Spotify */
-        .spotify {
-            padding: 4rem 1rem;
-            text-align: center;
-            background-color: #202020;
-        }
-
-        .spotify h2 {
-            margin-bottom: 2rem;
-        }
-
-        .spotify iframe {
-            width: 100%;
-            height: 352px;
-            border-radius: 12px;
-        }
-
-/* Estilo para la tienda online */
-.tienda-online {
-    display: flex; /* Organiza los elementos en una fila */
-    align-items: center; /* Centra los elementos verticalmente */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    padding: 2rem; /* Espaciado interno para evitar que el contenido toque los bordes */
-    background-color: #1e1e1e; /* Fondo oscuro */
-    color: #f8f8f8; /* Texto claro */
-}
-
-.tienda-online .tienda-contenido {
-    display: flex; /* Organiza los elementos en fila */
-    align-items: center; /* Alinea verticalmente la imagen y el texto */
-    gap: 2rem; /* Espaciado entre la imagen y el texto */
-    max-width: 1200px; /* Limita el ancho total de los elementos para que no ocupen toda la pantalla */
-    width: 100%; /* Asegura que sea responsivo */
-    text-align: left; /* Alineación de texto */
-    flex-wrap: wrap; /* Permite apilar los elementos en pantallas pequeñas */
-}
-
-.tienda-online img {
-    max-width: 40%; /* Limita el ancho de la imagen a un 40% del contenedor */
-    width: 100%; /* Imagen responsiva */
-    border-radius: 8px; /* Bordes redondeados opcionales */
-    object-fit: contain; /* Asegura que la imagen no se distorsione */
-}
-
-.tienda-online .tienda-texto {
-    max-width: 50%; /* Limita el ancho del texto */
-}
-
-/* Destacar el texto principal de la tienda online */
-.tienda-texto h3 {
-    color: #f39c12; /* Color vibrante */
-    font-size: 2rem; /* Aumenta el tamaño de la fuente */
-    font-weight: bold; /* Aplica negrita */
-    text-transform: uppercase; /* Todo en mayúsculas */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra suave */
-    margin-bottom: 1rem; /* Espaciado debajo del título */
-}
-
-.boton-tienda {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #f39c12;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.boton-tienda:hover {
-    background-color: #e67e22;
-}
-
-/* Responsividad para pantallas pequeñas */
-@media (max-width: 768px) {
-    .tienda-online .tienda-contenido {
-        flex-direction: column; /* Apila los elementos verticalmente */
-        text-align: center; /* Centra el texto */
-    }
-
-    .tienda-online img {
-        max-width: 80%; /* Ajusta el ancho de la imagen para pantallas pequeñas */
-    }
-
-    .tienda-online .tienda-texto {
-        max-width: 100%; /* Ajusta el texto para pantallas pequeñas */
-    }
-}
-
-        /* Redes sociales */
-        .social {
-            padding: 4rem 1rem;
-            text-align: center;
-            background-color: #1a1a1a;
-        }
-
-        .social h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .social-icons a {
-            font-size: 2rem;
-            color: #f5f5f5;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #ff5722;
-            transform: scale(1.2);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #c4c4c4;
-            background-color: #000;
-        }
-    </style>
-	
-	<style>
-    .video-thumbnails {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-        padding: 2rem 0;
-    }
-
-    .video-link {
-        position: relative;
-        display: inline-block;
-        max-width: 460px;
-        text-align: center;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .video-link img {
-        width: 100%;
-        display: block;
-    }
-
-    .video-link .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .video-link .overlay i {
-        font-size: 3rem;
-        color: #ff0000;
-        margin-bottom: 0.5rem;
-    }
-
-    .video-link .overlay p {
-        color: #fff;
-        font-size: 1rem;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    .video-link:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
-    }
-
-    .video-link:hover .overlay {
-        opacity: 1;
-    }
-	
-/* Sub-Cabecera */
-.subheader {
-    width: 100%;
-    background-color: #111; /* color de fondo por si la imagen no carga */
-    text-align: center;
-    padding: 2rem 0; /* algo de espacio arriba y abajo */
-}
-
-.subheader-img {
-    width: 50%;      /* la imagen ocupa la mitad del ancho de la pantalla */
-    max-width: 900px; /* límite máximo para que no se haga demasiado grande */
-    height: auto;    /* mantiene la proporción */
-    display: inline-block;
-}
-</style>
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '363467251248997');
-fbq('track', 'PageView');
-</script>
-
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=363467251248997&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
-
+  <!-- Datos estructurados de la banda. Los conciertos se generan solos a partir de la sección #directos. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "@id": "https://www.astralexperience.com/#band",
+    "name": "Astral Experience",
+    "url": "https://www.astralexperience.com/",
+    "image": "https://www.astralexperience.com/assets/img/og-image.jpg",
+    "logo": "https://www.astralexperience.com/assets/img/logo/apple-touch-icon.png",
+    "genre": ["Metal moderno", "Metalcore", "Djent"],
+    "foundingLocation": { "@type": "Place", "name": "Valencia, España" },
+    "email": "management.astralexperience@gmail.com",
+    "recordLabel": { "@type": "Organization", "name": "Art Gates Records", "url": "https://artgatesrecords.com" },
+    "sameAs": [
+      "https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0",
+      "https://www.instagram.com/astralexperience",
+      "https://www.youtube.com/@AstralExperience",
+      "https://www.tiktok.com/@astralexperience",
+      "https://www.facebook.com/astralexperience",
+      "https://www.threads.net/@astralexperience",
+      "https://astralexperience.bandcamp.com"
+    ]
+  }
+  </script>
 </head>
+
 <body>
-    <!-- Barra de navegación -->
-    <nav class="navbar">
-        <a href="#hero"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#videos"><i class="fab fa-youtube"></i> Vídeos</a>
-        <a href="#spotify"><i class="fab fa-spotify"></i> Spotify</a>
-        <a href="#store"><i class="fas fa-shopping-cart"></i> Tienda</a>
-        <a href="#social"><i class="fas fa-share-alt"></i> Contacto</a>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <!-- ─────────────────────────── CABECERA ─────────────────────────── -->
+  <header class="site-header" data-header>
+    <a class="brand" href="#inicio" aria-label="Astral Experience, inicio">
+      <!-- PLACEHOLDER: isotipo definitivo en assets/img/logo/isotipo.svg -->
+      <img src="assets/img/logo/isotipo.svg" width="36" height="36" alt="">
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+        <span class="nav__bars" aria-hidden="true"></span><span class="sr">Menú</span>
+      </button>
+      <ul class="nav__list" id="menu">
+        <li><a href="#musica">Música</a></li>
+        <li><a href="#videos">Vídeos</a></li>
+        <li><a href="#directos">Directos</a></li>
+        <li><a href="#banda">Banda</a></li>
+        <li><a href="#tienda">Tienda</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
 
-    <!-- Hero -->
-    <section id="hero" class="hero">
-		<h1>Astral Experience - Banda de Metal Moderno en España</h1>
-        <img src="cabecera.jpg" alt="Astral Experience">
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar a tema cálido">
+      <span class="theme-toggle__track" aria-hidden="true"><span class="theme-toggle__dot"></span></span>
+      <span class="theme-toggle__label" data-theme-label>Frío</span>
+    </button>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         HERO
+         ════════════════════════════════════════════════════════════════════ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__media tint" aria-hidden="true">
+        <!-- PLACEHOLDER: foto oficial 1. Horizontal 2400×1350 y vertical 1080×1620 (WebP).
+             Si cambias el nombre de archivo, cámbialo también en los <link rel="preload"> del <head>. -->
+        <picture>
+          <source media="(min-width: 48rem)" srcset="assets/img/hero-desktop.webp" width="2400" height="1350">
+          <img src="assets/img/hero-mobile.webp" width="1080" height="1620" alt="" fetchpriority="high" decoding="async">
+        </picture>
+        <div class="hero__slices" data-slices></div>
+      </div>
+
+      <div class="hero__content">
+        <h1 class="wordmark" id="hero-title">
+          <span>Astral</span>
+          <span>Experience</span>
+        </h1>
+        <p class="hero__tagline">Metal moderno desde Valencia</p>
+
+        <!-- ═══════════════ EDITABLE · LANZAMIENTO DESTACADO (HERO) ═══════════════
+             Actualiza en cada lanzamiento: portada, título, fecha y los dos enlaces.
+             "Escuchar" debe apuntar al enlace inteligente (bfan.link, etc.).
+             ═══════════════════════════════════════════════════════════════════════ -->
+        <aside class="hero__release" aria-label="Lanzamiento destacado">
+          <img class="hero__cover" src="assets/img/releases/ultimo-single.webp" width="1000" height="1000" alt="Portada del nuevo single" decoding="async">
+          <div class="hero__release-text">
+            <p class="hero__kicker">Nuevo single</p>
+            <p class="hero__release-title">[Título del single]</p>
+            <p class="hero__release-date"><time datetime="2026-11-15">[Fecha de salida]</time></p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="https://bfan.link/astral-experience" target="_blank" rel="noopener">
+                <svg aria-hidden="true"><use href="assets/img/icons.svg#play"/></svg>Escuchar
+              </a>
+              <a class="btn btn--ghost" href="#videos">Ver videoclip</a>
+            </div>
+          </div>
+        </aside>
+        <!-- ═══════════════ FIN EDITABLE · LANZAMIENTO DESTACADO ═══════════════ -->
+      </div>
     </section>
 
-    <!-- Últimos vídeos -->
-<section id="videos" class="videos">
-    <h2>Últimos vídeos</h2>
-    <div class="video-thumbnails">
-	
-		<a href="https://www.youtube.com/watch?v=SweENqyi5K8" target="_blank" class="video-link">
-            <img src="https://img.youtube.com/vi/SweENqyi5K8/hqdefault.jpg" alt="Astral Experience - Némesis">
-            <div class="overlay">
-                <i class="fab fa-youtube"></i>
-                <p>Ver en YouTube</p>
-            </div>
-        </a>
-		<a href="https://www.youtube.com/watch?v=YtnCqbn9QDs" target="_blank" class="video-link">
-            <img src="https://img.youtube.com/vi/YtnCqbn9QDs/hqdefault.jpg" alt="Astral Experience - Némesis">
-            <div class="overlay">
-                <i class="fab fa-youtube"></i>
-                <p>Ver en YouTube</p>
-            </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=lAb-cHnhmKQ" target="_blank" class="video-link">
-            <img src="https://img.youtube.com/vi/lAb-cHnhmKQ/hqdefault.jpg" alt="Astral Experience - Némesis">
-            <div class="overlay">
-                <i class="fab fa-youtube"></i>
-                <p>Ver en YouTube</p>
-            </div>
-        </a>
+    <!-- ════════════════════════════════════════════════════════════════════
+         MÚSICA
+         ════════════════════════════════════════════════════════════════════ -->
+    <section class="section music" id="musica" aria-labelledby="musica-title">
+      <div class="wrap">
+        <h2 class="section__title" id="musica-title">Música</h2>
 
-        <a href="https://www.youtube.com/watch?v=HKH8GMUi9Sg" target="_blank" class="video-link">
-            <img src="https://img.youtube.com/vi/HKH8GMUi9Sg/hqdefault.jpg" alt="Astral Experience - Distopía">
-            <div class="overlay">
-                <i class="fab fa-youtube"></i>
-                <p>Ver en YouTube</p>
-            </div>
-        </a>
+        <!-- ═══════════════ EDITABLE · ÚLTIMO LANZAMIENTO ═══════════════
+             Plataformas: deja href="#" en las que aún no tengas enlace y se ocultarán solas.
+             ═════════════════════════════════════════════════════════════ -->
+        <article class="release">
+          <img class="release__cover" src="assets/img/releases/ultimo-single.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="Portada de [Título del single]">
+          <div class="release__body">
+            <p class="release__type">Single · <time datetime="2026-11-15">[Fecha]</time></p>
+            <h3 class="release__title">[Título del single]</h3>
+            <p class="release__note">[Texto breve opcional: producción, sello, colaboración…]</p>
+            <ul class="platforms" aria-label="Escuchar en">
+              <li><a href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="assets/img/icons.svg#spotify"/></svg>Spotify</a></li>
+              <li><a href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="assets/img/icons.svg#applemusic"/></svg>Apple Music</a></li>
+              <li><a href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="assets/img/icons.svg#youtubemusic"/></svg>YouTube Music</a></li>
+              <li><a href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="assets/img/icons.svg#deezer"/></svg>Deezer</a></li>
+              <li><a href="https://astralexperience.bandcamp.com" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="assets/img/icons.svg#bandcamp"/></svg>Bandcamp</a></li>
+            </ul>
+          </div>
+        </article>
+        <!-- ═══════════════ FIN EDITABLE · ÚLTIMO LANZAMIENTO ═══════════════ -->
 
-        <a href="https://www.youtube.com/watch?v=K9ddG2ssP2I" target="_blank" class="video-link">
-            <img src="https://img.youtube.com/vi/K9ddG2ssP2I/hqdefault.jpg" alt="Astral Experience - Distopía (Guitar Playthrough)">
-            <div class="overlay">
-                <i class="fab fa-youtube"></i>
-                <p>Ver en YouTube</p>
-            </div>
+        <!-- ═══════════════ EDITABLE · REPRODUCTOR DE SPOTIFY ═══════════════
+             Ahora muestra el perfil de artista (se actualiza solo con lo más escuchado).
+             Para fijar un single o álbum, cambia la URL del iframe por:
+               https://open.spotify.com/embed/track/ID_DE_LA_CANCION?theme=0
+               https://open.spotify.com/embed/album/ID_DEL_ALBUM?theme=0
+             El ID es la parte final del enlace "Compartir" de Spotify.
+             Carga diferida: no pesa nada hasta que el usuario llega a esta zona.
+             ═════════════════════════════════════════════════════════════════ -->
+        <div class="player">
+          <iframe
+            title="Astral Experience en Spotify"
+            src="https://open.spotify.com/embed/artist/5CzccUc35KuvkdlFZDBaW0?theme=0"
+            width="100%" height="352" loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        <!-- ═══════════════ FIN EDITABLE · REPRODUCTOR DE SPOTIFY ═══════════════ -->
+
+        <!-- ═══════════════ EDITABLE · DISCOGRAFÍA ═══════════════
+             Un <li> por lanzamiento, del más reciente al más antiguo.
+             Portadas cuadradas 600×600 WebP en assets/img/releases/
+             ══════════════════════════════════════════════════════ -->
+        <h3 class="subhead">Lanzamientos</h3>
+        <ul class="discography">
+          <li>
+            <a href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener">
+              <img src="assets/img/releases/distopia.webp" width="600" height="600" loading="lazy" decoding="async" alt="Portada de Distopía">
+              <span class="discography__title">Distopía</span>
+              <span class="discography__meta">Single</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener">
+              <img src="assets/img/releases/perdon.webp" width="600" height="600" loading="lazy" decoding="async" alt="Portada de Perdón">
+              <span class="discography__title">Perdón</span>
+              <span class="discography__meta">Single</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener">
+              <img src="assets/img/releases/nemesis.webp" width="600" height="600" loading="lazy" decoding="async" alt="Portada de Némesis">
+              <span class="discography__title">Némesis</span>
+              <span class="discography__meta">Single</span>
+            </a>
+          </li>
+        </ul>
+        <!-- ═══════════════ FIN EDITABLE · DISCOGRAFÍA ═══════════════ -->
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         VÍDEOS
+         ════════════════════════════════════════════════════════════════════ -->
+    <section class="section videos" id="videos" aria-labelledby="videos-title">
+      <div class="wrap">
+        <h2 class="section__title" id="videos-title">Vídeos</h2>
+
+        <!-- ═══════════════ EDITABLE · VÍDEOS ═══════════════
+             Cada vídeo es un <li> con data-yt="ID_DE_YOUTUBE" y su título.
+             El ID es lo que va tras "watch?v=" en el enlace de YouTube.
+             El PRIMERO de la lista es el que se muestra grande (pon ahí el último videoclip).
+             La miniatura la sirve YouTube automáticamente: no hace falta subir imágenes.
+             El vídeo solo se carga al pulsar (no ralentiza la web).
+             ══════════════════════════════════════════════════ -->
+        <ul class="video-list" data-videos>
+          <li data-yt="SweENqyi5K8" data-title="Némesis">Némesis</li>
+          <li data-yt="HKH8GMUi9Sg" data-title="Distopía">Distopía</li>
+          <li data-yt="K9ddG2ssP2I" data-title="Distopía (guitar playthrough)">Distopía (guitar playthrough)</li>
+          <li data-yt="YtnCqbn9QDs" data-title="[Título del vídeo]">[Título del vídeo]</li>
+          <li data-yt="lAb-cHnhmKQ" data-title="[Título del vídeo]">[Título del vídeo]</li>
+        </ul>
+        <noscript><p><a href="https://www.youtube.com/@AstralExperience">Ver los vídeos en YouTube</a></p></noscript>
+        <!-- ═══════════════ FIN EDITABLE · VÍDEOS ═══════════════ -->
+
+        <a class="link-out" href="https://www.youtube.com/@AstralExperience" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="assets/img/icons.svg#youtube"/></svg>Más vídeos en YouTube
         </a>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         DIRECTOS
+         ════════════════════════════════════════════════════════════════════ -->
+    <section class="section shows" id="directos" aria-labelledby="directos-title">
+      <div class="wrap">
+        <h2 class="section__title" id="directos-title">Directos</h2>
+
+        <!-- ═══════════════ EDITABLE · CONCIERTOS ═══════════════
+             Un <li> por concierto, en cualquier orden. data-date="AAAA-MM-DD" es obligatorio:
+             la web ordena las fechas y pasa sola las ya celebradas a "Conciertos anteriores".
+             Para cada fecha: ciudad, sala, bandas con las que tocáis y enlace de entradas
+             (si aún no hay entradas, deja href="#" y el botón se oculta).
+             Los datos para Google (eventos) se generan automáticamente a partir de esta lista.
+             ══════════════════════════════════════════════════════ -->
+        <ol class="show-list" data-shows>
+          <li class="show" data-date="2026-10-30">
+            <time class="show__date" datetime="2026-10-30"><span class="show__day">30</span><span class="show__month">oct</span><span class="show__year">2026</span></time>
+            <div class="show__info">
+              <p class="show__city">Valencia</p>
+              <p class="show__venue">Peter Rock</p>
+              <p class="show__lineup">[Bandas del cartel]</p>
+            </div>
+            <a class="btn btn--primary show__tickets" href="#" target="_blank" rel="noopener">Entradas</a>
+          </li>
+          <li class="show" data-date="2026-09-05">
+            <time class="show__date" datetime="2026-09-05"><span class="show__day">05</span><span class="show__month">sep</span><span class="show__year">2026</span></time>
+            <div class="show__info">
+              <p class="show__city">Vitoria-Gasteiz</p>
+              <p class="show__venue">Urban Rock Concept</p>
+              <p class="show__lineup">Con I See Explosions y Cavan</p>
+            </div>
+            <a class="btn btn--primary show__tickets" href="#" target="_blank" rel="noopener">Entradas</a>
+          </li>
+          <li class="show" data-date="2026-09-04">
+            <time class="show__date" datetime="2026-09-04"><span class="show__day">04</span><span class="show__month">sep</span><span class="show__year">2026</span></time>
+            <div class="show__info">
+              <p class="show__city">Zaragoza</p>
+              <p class="show__venue">Utopía</p>
+              <p class="show__lineup">Con Ariday</p>
+            </div>
+            <a class="btn btn--primary show__tickets" href="#" target="_blank" rel="noopener">Entradas</a>
+          </li>
+        </ol>
+        <!-- ═══════════════ FIN EDITABLE · CONCIERTOS ═══════════════ -->
+
+        <p class="shows__empty" data-shows-empty hidden>No hay fechas anunciadas ahora mismo. Las publicamos primero en <a href="https://www.instagram.com/astralexperience" target="_blank" rel="noopener">Instagram</a>.</p>
+
+        <details class="shows__past" data-shows-past hidden>
+          <summary>Conciertos anteriores</summary>
+          <ol class="show-list show-list--past" data-shows-past-list></ol>
+        </details>
+
+        <p class="shows__booking">Contratación: <a href="mailto:management.astralexperience@gmail.com">management.astralexperience@gmail.com</a></p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         BANDA
+         ════════════════════════════════════════════════════════════════════ -->
+    <section class="section band" id="banda" aria-labelledby="banda-title">
+      <!-- PLACEHOLDER: foto oficial 2, horizontal 2000×1125 WebP -->
+      <figure class="band__photo tint">
+        <img src="assets/img/banda.webp" width="2000" height="1125" loading="lazy" decoding="async" alt="Astral Experience: [nombres de izquierda a derecha]">
+      </figure>
+      <div class="wrap band__grid">
+        <h2 class="section__title" id="banda-title">Banda</h2>
+
+        <!-- ═══════════════ EDITABLE · BIOGRAFÍA ═══════════════ -->
+        <div class="band__bio">
+          <p>[Biografía · párrafo 1]</p>
+          <p>[Biografía · párrafo 2]</p>
+        </div>
+        <!-- ═══════════════ FIN EDITABLE · BIOGRAFÍA ═══════════════ -->
+
+        <!-- ═══════════════ EDITABLE · FORMACIÓN ═══════════════
+             Un bloque <div> por miembro: nombre (<dt>) y rol (<dd>). -->
+        <dl class="lineup">
+          <div><dt>Ovidi</dt><dd>Voz</dd></div>
+          <div><dt>Jaime</dt><dd>Voz</dd></div>
+          <div><dt>[Nombre]</dt><dd>Guitarra</dd></div>
+          <div><dt>[Nombre]</dt><dd>Guitarra</dd></div>
+          <div><dt>[Nombre]</dt><dd>Bajo</dd></div>
+          <div><dt>[Nombre]</dt><dd>Batería</dd></div>
+        </dl>
+        <!-- ═══════════════ FIN EDITABLE · FORMACIÓN ═══════════════ -->
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         TIENDA
+         ════════════════════════════════════════════════════════════════════ -->
+    <section class="section store" id="tienda" aria-labelledby="tienda-title">
+      <div class="wrap store__grid">
+        <!-- PLACEHOLDER: foto de merch 1200×900 WebP -->
+        <img class="store__img" src="assets/img/merch.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Merchandising oficial de Astral Experience">
+        <div class="store__body">
+          <h2 class="section__title" id="tienda-title">Tienda</h2>
+          <p>Discos, camisetas y merchandising oficial en la tienda de Art Gates Records.</p>
+          <a class="btn btn--primary" href="https://artgatesrecords.com/store/es/astral-experience" target="_blank" rel="noopener">Ir a la tienda</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ OPCIONAL · MAILING LIST (desactivada) ═══════════════
+         Cuando tengáis plataforma de mailing (Mailchimp, Brevo, MailerLite…), sustituye
+         ACTION_URL por la URL del formulario que te dé la plataforma y quita los comentarios.
+    <section class="section newsletter" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="wrap newsletter__grid">
+        <h2 class="section__title" id="newsletter-title">Lista de correo</h2>
+        <form class="newsletter__form" action="ACTION_URL" method="post" target="_blank">
+          <label for="nl-email">Tu correo</label>
+          <input id="nl-email" type="email" name="EMAIL" autocomplete="email" required>
+          <button class="btn btn--primary" type="submit">Apuntarme</button>
+        </form>
+      </div>
+    </section>
+    ═══════════════ FIN OPCIONAL · MAILING LIST ═══════════════ -->
+
+  </main>
+
+  <!-- ─────────────────────────── CONTACTO / PIE ─────────────────────────── -->
+  <footer class="site-footer" id="contacto">
+    <div class="wrap footer__grid">
+      <div class="footer__contact">
+        <h2 class="section__title">Contacto</h2>
+        <dl>
+          <div><dt>Contratación y prensa</dt><dd><a href="mailto:management.astralexperience@gmail.com">management.astralexperience@gmail.com</a></dd></div>
+          <div><dt>General</dt><dd><a href="mailto:online.astralexperience@gmail.com">online.astralexperience@gmail.com</a></dd></div>
+        </dl>
+      </div>
+
+      <ul class="social" aria-label="Redes sociales">
+        <li><a href="https://www.instagram.com/astralexperience" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="assets/img/icons.svg#instagram"/></svg></a></li>
+        <li><a href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener" aria-label="Spotify"><svg aria-hidden="true"><use href="assets/img/icons.svg#spotify"/></svg></a></li>
+        <li><a href="https://www.youtube.com/@AstralExperience" target="_blank" rel="noopener" aria-label="YouTube"><svg aria-hidden="true"><use href="assets/img/icons.svg#youtube"/></svg></a></li>
+        <li><a href="https://www.tiktok.com/@astralexperience" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true"><use href="assets/img/icons.svg#tiktok"/></svg></a></li>
+        <li><a href="https://www.facebook.com/astralexperience" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="assets/img/icons.svg#facebook"/></svg></a></li>
+        <li><a href="https://www.threads.net/@astralexperience" target="_blank" rel="noopener" aria-label="Threads"><svg aria-hidden="true"><use href="assets/img/icons.svg#threads"/></svg></a></li>
+      </ul>
+
+      <div class="footer__legal">
+        <p>© <span data-year>2026</span> Astral Experience · Art Gates Records</p>
+        <p><a href="politica-de-privacidad.html">Política de privacidad</a> · <a href="eliminacion-de-datos.html">Eliminación de datos</a></p>
+      </div>
     </div>
-</section>
-
-    <!-- Spotify -->
-    <section id="spotify" class="spotify">
-        <h2>Escúchanos en Spotify</h2>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5CzccUc35KuvkdlFZDBaW0?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </section>
-
-    <!-- Tienda Online -->
-<section id="store" class="tienda-online">
-        <div class="tienda-contenido">
-            <img src="productos.jpg" alt="Productos de Astral Experience">
-            <div class="tienda-texto">
-                <h3>Visita nuestra tienda online</h3>
-                <p>Descubre el merchandising oficial y la música de Astral Experience. ¡No te pierdas nuestras últimas novedades!</p>
-                <a href="https://artgatesrecords.com/store/es/astral-experience" target="_blank" class="boton-tienda">Ir a la tienda</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Redes sociales -->
-    <section id="social" class="social">
-        <h2>Contáctanos</h2>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/astralexperience" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/astralexperience" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@astralexperience" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="mailto:online.astralexperience@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            <a href="https://open.spotify.com/intl-es/artist/5CzccUc35KuvkdlFZDBaW0?si=s5YykCl6S4urznzZn_IRlg" target="_blank"><i class="fab fa-spotify"></i></a>
-            <a href="https://www.threads.net/@astralexperience" target="_blank"><i class="fa-solid fa-at"></i></a>
-            <a href="https://www.youtube.com/astralexperience" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-    </section>
-
-    <!-- Pie de página -->
-    <footer>
-        &copy; 2024 Astral Experience. Todos los derechos reservados.
-    </footer>
-	
-	<!-- JavaScript para animación del scroll -->
-    <script>
-        document.querySelectorAll('.navbar a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1); // Obtén el ID del ancla
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth', // Animación suave
-                        block: 'start' // Alineación al inicio
-                    });
-                }
-            });
-        });
-    </script>
+  </footer>
 </body>
 </html>

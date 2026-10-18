@@ -1,0 +1,12 @@
+{
+  "name": "Astral Experience",
+  "short_name": "Astral Exp.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0B1626",
+  "theme_color": "#0B1626",
+  "icons": [
+    { "src": "assets/img/logo/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/img/logo/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
