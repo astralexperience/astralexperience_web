@@ -415,16 +415,19 @@ footer { border-top: 1px solid var(--line); }
 /* ==========================================================================
    COLORES DE MARCA POR FASE
    Se elige la fase en <html data-fase="azul|rojo"> (index.html y 404.html).
-   Valores de 01_Materiales_comunes/Textos/Colores_de_marca.md
+   Valores de 01_Materiales_comunes/Textos/Colores_de_marca.md.
+   Fondos (--bg, --abyss, --deep): término medio entre la paleta y el tono gris azulado
+   de la propuesta original, para que no queden tan saturados. Paleta pura de referencia:
+   azul #000000 / #05202A / #0B3F4E · rojo #000000 / #2A0606 / #480B0A
    ========================================================================== */
 html[data-fase="azul"]{
-  --bg:#000000; --abyss:#05202A; --deep:#0B3F4E; --main:#03586F; --mid:#37778B; --accent:#7CADBE; --light:#A3CDDD;
-  --abyss-rgb:5 32 42; --deep-rgb:11 63 78; --main-rgb:3 88 111; --accent-rgb:124 173 190; --light-rgb:163 205 221;
+  --bg:#070E13; --abyss:#0A1B23; --deep:#113744; --main:#03586F; --mid:#37778B; --accent:#7CADBE; --light:#A3CDDD;
+  --abyss-rgb:10 27 35; --deep-rgb:17 55 68; --main-rgb:3 88 111; --accent-rgb:124 173 190; --light-rgb:163 205 221;
   --dot:var(--accent);
 }
 html[data-fase="rojo"]{
-  --bg:#000000; --abyss:#2A0606; --deep:#480B0A; --main:#BB3530; --mid:#891E1C; --accent:#D95C52; --light:#D7A99E;
-  --abyss-rgb:42 6 6; --deep-rgb:72 11 10; --main-rgb:187 53 48; --accent-rgb:217 92 82; --light-rgb:215 169 158;
+  --bg:#0F090C; --abyss:#1D0E11; --deep:#3E0D0E; --main:#BB3530; --mid:#891E1C; --accent:#D95C52; --light:#D7A99E;
+  --abyss-rgb:29 14 17; --deep-rgb:62 13 14; --main-rgb:187 53 48; --accent-rgb:217 92 82; --light-rgb:215 169 158;
   --dot:var(--main);
 }
 html[data-fase]{
@@ -440,4 +443,4 @@ html[data-fase] body{color:var(--text)}
 .cursor-glow{background:radial-gradient(circle,rgb(var(--accent-rgb) / .12),transparent 70%)}
 .button-primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .button-primary:hover{background:var(--main);border-color:var(--main);color:#fff}
-.hero{background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.6) 48%,rgba(0,0,0,.2) 100%),radial-gradient(ellipse at 74% 40%,var(--deep) 0%,var(--abyss) 34%,#000 72%)}
+.hero{background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.6) 48%,rgba(0,0,0,.2) 100%),radial-gradient(ellipse at 74% 40%,var(--deep) 0%,var(--abyss) 34%,var(--bg) 72%)}
