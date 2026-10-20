@@ -132,14 +132,17 @@
       });
     });
     let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
-    const order = cells.map((_, i) => i).sort(() => rnd() - .5);
+    // Letras fijas desde el primer día (posición dentro de "ASTRALEXPERIENCE"): A·L / E·X·N
+    const PINNED = [0, 5, 6, 7, 13];
+    const rest = cells.map((_, i) => i).filter((i) => !PINNED.includes(i)).sort(() => rnd() - .5);
+    const order = [...PINNED, ...rest];
 
     const pad = (n) => String(n).padStart(2, '0');
     let progress = 0;
     function tick() {
       const now = Date.now();
       progress = Math.min(1, Math.max(0, (now - START) / (END - START)));
-      const shown = Math.round(progress * cells.length);
+      const shown = PINNED.length + Math.round(progress * rest.length);
       const open = new Set(order.slice(0, shown));
       cells.forEach((c, i) => {
         if (open.has(i)) { c.el.textContent = c.ch; c.el.className = 'k'; }
