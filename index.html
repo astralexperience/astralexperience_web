@@ -1,522 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Astral Experience es una banda de metal moderno de España. Escucha nuestra música en Spotify, mira los últimos vídeos en YouTube, descubre críticas y consigue merchandising oficial en nuestra tienda online."">
-    <meta name="keywords" content="Astral Experience, metal moderno, banda metal español, críticas, vídeos de música, Spotify, redes sociales, tienda online">
-    <meta name="author" content="Astral Experience">
-	
-	<meta property="og:title" content="AAstral Experience | Metal moderno en España - Página Oficial">
-	<meta property="og:description" content="Página oficial de Astral Experience, banda de metal moderno español. Descubre nuestros vídeos en YouTube y nuestra música en Spotify. Visita nuestra tienda online y contáctanos a través de nuestras redes sociales.">
-	<meta property="og:image" content="cabecera.jpg"> <!-- Imagen destacada para compartir -->
-	<meta property="og:url" content="www.astralexperience.com">
-	<meta property="og:type" content="website">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Astral Experience | Metal moderno en España - Página Oficial">
-	<meta name="twitter:description" content="Página oficial de Astral Experience, banda de metal moderno español. Descubre nuestros vídeos en YouTube y nuestra música en Spotify. Visita nuestra tienda online y contáctanos a través de nuestras redes sociales.">
-	<meta name="twitter:image" content="cabecera.jpg">
-	
-	<link rel="canonical" href="www.astralexperience.com">
-	<link rel="icon" href="favicon.png" type="image/png">
-	
-	<script type="application/ld+json">
-	{
-	  "@context": "https://schema.org",
-	  "@type": "MusicGroup",
-	  "name": "Astral Experience",
-	  "genre": "Metal moderno",
-	  "url": "https://www.astralexperience.com",
-	  "logo": "https://www.astralexperience.com/favicon.png",
-	  "image": "https://www.astralexperience.com/cabecera.jpg",
-	  "sameAs": [
-		"https://www.facebook.com/astralexperience",
-		"https://www.instagram.com/astralexperience",
-		"https://www.youtube.com/astralexperience",
-		"https://www.threads.net/@astralexperience",
-		"https://www.tiktok.com/@astralexperience",
-		"https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0"
-	  ]
-	}
-	</script>
-	
-    <title>Astral Experience | Metal moderno en España - Página Oficial</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Estilos -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Raleway', sans-serif;
-            background-color: #121212;
-            color: #f5f5f5;
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, .navbar a, .social h2, table {
-            text-transform: uppercase;
-        }
-
-        /* Cabecera de navegación */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 1rem 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .navbar a {
-            color: #f5f5f5;
-            text-decoration: none;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .navbar a:hover {
-            color: #ff5722;
-            transform: scale(1.1);
-        }
-
-        /* Hero - Foto de cabecera */
-		
-		.hero {
-    position: relative;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-}
-
-.hero::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.6); /* Oscurece la imagen */
-}
-
-        /* Sección de críticas */
-        .reviews {
-            padding: 4rem 1rem;
-            text-align: center;
-            background-color: #1a1a1a;
-        }
-
-        .reviews h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        table {
-            width: 80%;
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
-
-        td {
-            border: 1px solid #444;
-            padding: 2rem;
-            vertical-align: top;
-        }
-
-        blockquote {
-            font-size: 1.5rem;
-            font-style: italic;
-            text-transform: none;
-            margin-bottom: 1rem;
-        }
-
-        cite {
-            font-size: 1rem;
-            font-style: normal;
-            display: block;
-            text-align: center;
-            color: #bbb;
-        }
-
-        /* Últimos vídeos */
-        .videos {
-            padding: 4rem 1rem;
-            text-align: center;
-            background-color: #181818;
-        }
-
-        .videos h2 {
-            margin-bottom: 2rem;
-        }
-
-        .videos iframe {
-            width: 100%;
-            max-width: 560px;
-            height: 315px;
-            margin: 1rem auto;
-        }
-
-        /* Spotify */
-        .spotify {
-            padding: 4rem 1rem;
-            text-align: center;
-            background-color: #202020;
-        }
-
-        .spotify h2 {
-            margin-bottom: 2rem;
-        }
-
-        .spotify iframe {
-            width: 100%;
-            height: 352px;
-            border-radius: 12px;
-        }
-
-/* Estilo para la tienda online */
-.tienda-online {
-    display: flex; /* Organiza los elementos en una fila */
-    align-items: center; /* Centra los elementos verticalmente */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    padding: 2rem; /* Espaciado interno para evitar que el contenido toque los bordes */
-    background-color: #1e1e1e; /* Fondo oscuro */
-    color: #f8f8f8; /* Texto claro */
-}
-
-.tienda-online .tienda-contenido {
-    display: flex; /* Organiza los elementos en fila */
-    align-items: center; /* Alinea verticalmente la imagen y el texto */
-    gap: 2rem; /* Espaciado entre la imagen y el texto */
-    max-width: 1200px; /* Limita el ancho total de los elementos para que no ocupen toda la pantalla */
-    width: 100%; /* Asegura que sea responsivo */
-    text-align: left; /* Alineación de texto */
-    flex-wrap: wrap; /* Permite apilar los elementos en pantallas pequeñas */
-}
-
-.tienda-online img {
-    max-width: 40%; /* Limita el ancho de la imagen a un 40% del contenedor */
-    width: 100%; /* Imagen responsiva */
-    border-radius: 8px; /* Bordes redondeados opcionales */
-    object-fit: contain; /* Asegura que la imagen no se distorsione */
-}
-
-.tienda-online .tienda-texto {
-    max-width: 50%; /* Limita el ancho del texto */
-}
-
-/* Destacar el texto principal de la tienda online */
-.tienda-texto h3 {
-    color: #f39c12; /* Color vibrante */
-    font-size: 2rem; /* Aumenta el tamaño de la fuente */
-    font-weight: bold; /* Aplica negrita */
-    text-transform: uppercase; /* Todo en mayúsculas */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra suave */
-    margin-bottom: 1rem; /* Espaciado debajo del título */
-}
-
-.boton-tienda {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #f39c12;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.boton-tienda:hover {
-    background-color: #e67e22;
-}
-
-/* Responsividad para pantallas pequeñas */
-@media (max-width: 768px) {
-    .tienda-online .tienda-contenido {
-        flex-direction: column; /* Apila los elementos verticalmente */
-        text-align: center; /* Centra el texto */
-    }
-
-    .tienda-online img {
-        max-width: 80%; /* Ajusta el ancho de la imagen para pantallas pequeñas */
-    }
-
-    .tienda-online .tienda-texto {
-        max-width: 100%; /* Ajusta el texto para pantallas pequeñas */
-    }
-}
-
-        /* Redes sociales */
-        .social {
-            padding: 4rem 1rem;
-            text-align: center;
-            background-color: #1a1a1a;
-        }
-
-        .social h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .social-icons a {
-            font-size: 2rem;
-            color: #f5f5f5;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #ff5722;
-            transform: scale(1.2);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #c4c4c4;
-            background-color: #000;
-        }
-    </style>
-	
-	<style>
-    .video-thumbnails {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-        padding: 2rem 0;
-    }
-
-    .video-link {
-        position: relative;
-        display: inline-block;
-        max-width: 460px;
-        text-align: center;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .video-link img {
-        width: 100%;
-        display: block;
-    }
-
-    .video-link .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .video-link .overlay i {
-        font-size: 3rem;
-        color: #ff0000;
-        margin-bottom: 0.5rem;
-    }
-
-    .video-link .overlay p {
-        color: #fff;
-        font-size: 1rem;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    .video-link:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
-    }
-
-    .video-link:hover .overlay {
-        opacity: 1;
-    }
-	
-/* Sub-Cabecera */
-.subheader {
-    width: 100%;
-    background-color: #111; /* color de fondo por si la imagen no carga */
-    text-align: center;
-    padding: 2rem 0; /* algo de espacio arriba y abajo */
-}
-
-.subheader-img {
-    width: 50%;      /* la imagen ocupa la mitad del ancho de la pantalla */
-    max-width: 900px; /* límite máximo para que no se haga demasiado grande */
-    height: auto;    /* mantiene la proporción */
-    display: inline-block;
-}
-</style>
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '363467251248997');
-fbq('track', 'PageView');
-</script>
-
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=363467251248997&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- ═════════════════════════════════════════════════════════════════════
+       PÁGINA PROVISIONAL (teaser) mientras se anuncia el cambio de imagen.
+       Fechas y enlaces editables en el bloque CONFIG del <script> final.
+       No toca politica-de-privacidad.html ni eliminacion-de-datos.html.
+       ═════════════════════════════════════════════════════════════════════ -->
+  <title>Astral Experience</title>
+  <meta name="description" content="Astral Experience. Algo cambia el 02.11.2026.">
+  <link rel="canonical" href="https://www.astralexperience.com/">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Astral Experience">
+  <meta property="og:url" content="https://www.astralexperience.com/">
+  <meta property="og:title" content="Astral Experience · 02.11.2026">
+  <meta property="og:description" content="Algo cambia.">
+  <meta property="og:image" content="https://www.astralexperience.com/assets/teaser/og-teaser.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preload" href="assets/teaser/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face{font-family:"Barlow Condensed";src:url("assets/teaser/barlow-condensed-600.woff2") format("woff2");font-weight:400 600;font-display:swap}
+    @font-face{font-family:"Barlow Condensed";src:url("assets/teaser/barlow-condensed-800.woff2") format("woff2");font-weight:700 900;font-display:swap}
+    :root{--bg:#070E13;--accent:#7CADBE;--main:#03586F;--light:#A3CDDD;--text:#fff;--muted:#6f8f9b;--font:"Barlow Condensed","Arial Narrow",sans-serif}
+    *{box-sizing:border-box;margin:0}
+    html,body{height:100%;background:var(--bg);color:var(--text)}
+    body{font-family:var(--font);overflow:hidden;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+    .vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.85) 100%)}
+    .grain{position:fixed;inset:-50%;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1s steps(6) infinite}
+    @keyframes grain{0%{transform:translate(0,0)}50%{transform:translate(-4%,3%)}100%{transform:translate(3%,-2%)}}
+    main{position:relative;z-index:2;height:100%;display:grid;grid-template-rows:auto 1fr auto;padding:clamp(18px,4vw,48px);pointer-events:none}
+    main a,main button{pointer-events:auto}
+    .top,.bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:600;font-size:11px;letter-spacing:.22em;color:var(--muted)}
+    .sig{display:flex;align-items:center;gap:10px}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:blink 1.6s steps(2) infinite}
+    @keyframes blink{50%{opacity:.15}}
+    .center{align-self:center;justify-self:center;text-align:center;display:grid;gap:clamp(18px,3vw,34px);justify-items:center}
+    .code{font-weight:800;font-size:clamp(40px,10vw,160px);line-height:.82;letter-spacing:-.03em;text-transform:uppercase;white-space:nowrap}
+    .code .row{display:block}
+    .code .row span{display:inline-block;width:.56em;text-align:center;transition:color .4s}
+    .code .x{color:transparent;-webkit-text-stroke:1px rgba(163,205,221,.45)}
+    .code .k{color:var(--text);text-shadow:0 0 30px rgba(124,173,190,.35)}
+    .claim{font-weight:600;font-size:clamp(13px,1.4vw,16px);letter-spacing:.42em;color:var(--light)}
+    .count{display:flex;gap:clamp(14px,3vw,34px);font-variant-numeric:tabular-nums}
+    .count div{display:grid;justify-items:center;gap:6px}
+    .count b{font-weight:800;font-size:clamp(28px,4.5vw,56px);line-height:1}
+    .count small{font-size:10px;letter-spacing:.24em;color:var(--muted)}
+    .progress{width:min(360px,70vw);height:1px;background:rgba(163,205,221,.18);position:relative}
+    .progress i{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--main),var(--accent))}
+    .note{font-size:11px;letter-spacing:.2em;color:var(--muted)}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border:1px solid rgba(163,205,221,.35);font-weight:700;font-size:11px;letter-spacing:.18em;transition:.25s}
+    .btn:hover,.btn:focus-visible{border-color:var(--accent);color:var(--accent)}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#000}
+    .btn.primary:hover{background:var(--main);border-color:var(--main);color:#fff}
+    .bottom a:hover{color:var(--text)}
+    :focus-visible{outline:1px solid var(--accent);outline-offset:4px}
+    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+    @media(max-width:600px){.top .hide-m{display:none}.bottom{flex-direction:column;gap:8px}.code{font-size:14.5vw}}
+    @media(prefers-reduced-motion:reduce){.grain,.dot{animation:none}}
+  </style>
 </head>
 <body>
-    <!-- Barra de navegación -->
-    <nav class="navbar">
-        <a href="#hero"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#videos"><i class="fab fa-youtube"></i> Vídeos</a>
-        <a href="#spotify"><i class="fab fa-spotify"></i> Spotify</a>
-        <a href="#store"><i class="fas fa-shopping-cart"></i> Tienda</a>
-        <a href="#social"><i class="fas fa-share-alt"></i> Contacto</a>
-    </nav>
+  <canvas id="signal" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
 
-    <!-- Hero -->
-    <section id="hero" class="hero">
-		<h1>Astral Experience - Banda de Metal Moderno en España</h1>
-        <img src="cabecera.jpg" alt="Astral Experience">
-    </section>
-
-    <!-- Últimos vídeos -->
-<section id="videos" class="videos">
-    <h2>Últimos vídeos</h2>
-    <div class="video-thumbnails">
-	
-		<a href="https://www.youtube.com/watch?v=SweENqyi5K8" target="_blank" class="video-link">
-            <img src="https://img.youtube.com/vi/SweENqyi5K8/hqdefault.jpg" alt="Astral Experience - Némesis">
-            <div class="overlay">
-                <i class="fab fa-youtube"></i>
-                <p>Ver en YouTube</p>
-            </div>
-        </a>
-		<a href="https://www.youtube.com/watch?v=YtnCqbn9QDs" target="_blank" class="video-link">
-            <img src="https://img.youtube.com/vi/YtnCqbn9QDs/hqdefault.jpg" alt="Astral Experience - Némesis">
-            <div class="overlay">
-                <i class="fab fa-youtube"></i>
-                <p>Ver en YouTube</p>
-            </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=lAb-cHnhmKQ" target="_blank" class="video-link">
-            <img src="https://img.youtube.com/vi/lAb-cHnhmKQ/hqdefault.jpg" alt="Astral Experience - Némesis">
-            <div class="overlay">
-                <i class="fab fa-youtube"></i>
-                <p>Ver en YouTube</p>
-            </div>
-        </a>
-
-        <a href="https://www.youtube.com/watch?v=HKH8GMUi9Sg" target="_blank" class="video-link">
-            <img src="https://img.youtube.com/vi/HKH8GMUi9Sg/hqdefault.jpg" alt="Astral Experience - Distopía">
-            <div class="overlay">
-                <i class="fab fa-youtube"></i>
-                <p>Ver en YouTube</p>
-            </div>
-        </a>
-
-        <a href="https://www.youtube.com/watch?v=K9ddG2ssP2I" target="_blank" class="video-link">
-            <img src="https://img.youtube.com/vi/K9ddG2ssP2I/hqdefault.jpg" alt="Astral Experience - Distopía (Guitar Playthrough)">
-            <div class="overlay">
-                <i class="fab fa-youtube"></i>
-                <p>Ver en YouTube</p>
-            </div>
-        </a>
+  <main>
+    <div class="top">
+      <span class="sig"><span class="dot"></span><span data-status>SEÑAL INTERCEPTADA</span></span>
+      <span class="hide-m">39°28′N 0°22′W</span>
+      <span data-pct>000%</span>
     </div>
-</section>
 
-    <!-- Spotify -->
-    <section id="spotify" class="spotify">
-        <h2>Escúchanos en Spotify</h2>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5CzccUc35KuvkdlFZDBaW0?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </section>
+    <div class="center">
+      <h1 class="code" aria-label="Astral Experience">
+        <span class="row" data-word="ASTRAL"></span>
+        <span class="row" data-word="EXPERIENCE"></span>
+      </h1>
+      <p class="claim" data-claim>ALGO CAMBIA</p>
+      <div class="count" data-count aria-live="off">
+        <div><b data-d>00</b><small>DÍAS</small></div>
+        <div><b data-h>00</b><small>HORAS</small></div>
+        <div><b data-m>00</b><small>MIN</small></div>
+        <div><b data-s>00</b><small>SEG</small></div>
+      </div>
+      <div class="progress" aria-hidden="true"><i data-bar></i></div>
+      <p class="note" data-note>02.11.2026 · EL MENSAJE SE DESCIFRA CADA DÍA</p>
+      <div class="cta">
+        <a class="btn primary" href="https://www.instagram.com/astralexperience" target="_blank" rel="noopener">SÍGUENOS EN INSTAGRAM ↗</a>
+        <a class="btn" href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener">SPOTIFY ↗</a>
+        <a class="btn" href="https://www.youtube.com/@AstralExperience" target="_blank" rel="noopener">YOUTUBE ↗</a>
+      </div>
+    </div>
 
-    <!-- Tienda Online -->
-<section id="store" class="tienda-online">
-        <div class="tienda-contenido">
-            <img src="productos.jpg" alt="Productos de Astral Experience">
-            <div class="tienda-texto">
-                <h3>Visita nuestra tienda online</h3>
-                <p>Descubre el merchandising oficial y la música de Astral Experience. ¡No te pierdas nuestras últimas novedades!</p>
-                <a href="https://artgatesrecords.com/store/es/astral-experience" target="_blank" class="boton-tienda">Ir a la tienda</a>
-            </div>
-        </div>
-    </section>
+    <div class="bottom">
+      <span>© <span data-year>2026</span> ASTRAL EXPERIENCE · VALENCIA</span>
+      <span><a href="mailto:management.astralexperience@gmail.com">CONTACTO</a> · <a href="politica-de-privacidad.html">PRIVACIDAD</a> · <a href="eliminacion-de-datos.html">ELIMINACIÓN DE DATOS</a></span>
+    </div>
+  </main>
 
-    <!-- Redes sociales -->
-    <section id="social" class="social">
-        <h2>Contáctanos</h2>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/astralexperience" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/astralexperience" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@astralexperience" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="mailto:online.astralexperience@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            <a href="https://open.spotify.com/intl-es/artist/5CzccUc35KuvkdlFZDBaW0?si=s5YykCl6S4urznzZn_IRlg" target="_blank"><i class="fab fa-spotify"></i></a>
-            <a href="https://www.threads.net/@astralexperience" target="_blank"><i class="fa-solid fa-at"></i></a>
-            <a href="https://www.youtube.com/astralexperience" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-    </section>
+  <script>
+  (() => {
+    /* ═══════════════ CONFIG (editable) ═══════════════
+       START: cuándo empieza a descifrarse el nombre (0 %).
+       END:   el día del cambio (100 %): a esa hora el nombre queda completo
+              y el aviso pasa a "YA ESTÁ AQUÍ".                              */
+    const START = new Date('2026-10-20T00:00:00+02:00');
+    const END   = new Date('2026-11-02T00:00:00+01:00');
+    /* ═════════════════════════════════════════════════ */
 
-    <!-- Pie de página -->
-    <footer>
-        &copy; 2024 Astral Experience. Todos los derechos reservados.
-    </footer>
-	
-	<!-- JavaScript para animación del scroll -->
-    <script>
-        document.querySelectorAll('.navbar a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1); // Obtén el ID del ancla
-                const targetElement = document.getElementById(targetId);
+    const $ = (s) => document.querySelector(s);
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const GLYPHS = '#%&/<>[]{}=+*?!$@0123456789';
 
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth', // Animación suave
-                        block: 'start' // Alineación al inicio
-                    });
-                }
-            });
-        });
-    </script>
+    /* ---- Nombre cifrado: cada día se revelan más letras, siempre en el mismo orden ---- */
+    const cells = [];
+    document.querySelectorAll('[data-word]').forEach((row) => {
+      [...row.dataset.word].forEach((ch) => {
+        const s = document.createElement('span');
+        s.textContent = ch; s.className = 'x'; s.setAttribute('aria-hidden', 'true');
+        row.append(s); cells.push({ el: s, ch });
+      });
+    });
+    let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+    const order = cells.map((_, i) => i).sort(() => rnd() - .5);
+
+    const pad = (n) => String(n).padStart(2, '0');
+    let progress = 0;
+    function tick() {
+      const now = Date.now();
+      progress = Math.min(1, Math.max(0, (now - START) / (END - START)));
+      const shown = Math.round(progress * cells.length);
+      const open = new Set(order.slice(0, shown));
+      cells.forEach((c, i) => {
+        if (open.has(i)) { c.el.textContent = c.ch; c.el.className = 'k'; }
+        else { c.el.className = 'x'; c.el.textContent = reduced ? '#' : GLYPHS[Math.floor(Math.random() * GLYPHS.length)]; }
+      });
+      $('[data-pct]').textContent = String(Math.floor(progress * 100)).padStart(3, '0') + '%';
+      $('[data-bar]').style.width = (progress * 100) + '%';
+      let left = Math.max(0, END - now);
+      const d = Math.floor(left / 864e5); left -= d * 864e5;
+      const h = Math.floor(left / 36e5); left -= h * 36e5;
+      const m = Math.floor(left / 6e4); left -= m * 6e4;
+      $('[data-d]').textContent = pad(d); $('[data-h]').textContent = pad(h);
+      $('[data-m]').textContent = pad(m); $('[data-s]').textContent = pad(Math.floor(left / 1e3));
+      if (progress >= 1) {
+        $('[data-count]').hidden = true;
+        $('[data-claim]').textContent = 'YA ESTÁ AQUÍ';
+        $('[data-note]').textContent = 'DESCÚBRELO EN INSTAGRAM';
+        $('[data-status]').textContent = 'SEÑAL ABIERTA';
+      }
+    }
+    tick(); setInterval(tick, reduced ? 1000 : 120);
+    $('[data-year]').textContent = new Date().getFullYear();
+
+    /* ---- Señal: líneas de interferencia que reaccionan al cursor o al dedo ---- */
+    const cv = $('#signal'), ctx = cv.getContext('2d');
+    let W = 0, H = 0, dpr = 1, px = -1e4, py = -1e4, t = 0, running = true;
+    const resize = () => { dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+    resize(); addEventListener('resize', resize);
+    const move = (x, y) => { px = x; py = y; };
+    addEventListener('pointermove', (e) => move(e.clientX, e.clientY), { passive: true });
+    addEventListener('pointerleave', () => move(-1e4, -1e4));
+    addEventListener('touchmove', (e) => { const p = e.touches[0]; if (p) move(p.clientX, p.clientY); }, { passive: true });
+    document.addEventListener('visibilitychange', () => { running = !document.hidden; if (running && !reduced) requestAnimationFrame(draw); });
+
+    function noise(x, y) { return Math.sin(x * 1.7 + y * 3.1) * .5 + Math.sin(x * .6 - y * 1.3 + t * .7) * .35 + Math.sin(x * 3.3 + t * 1.9) * .15; }
+    function draw() {
+      if (!running) return;
+      t += .016;
+      ctx.clearRect(0, 0, W, H);
+      const lines = Math.round(H / 14), step = Math.max(6, W / 160);
+      const calm = .25 + .75 * (1 - progress); // cuanto más cerca del día, más limpia la señal
+      for (let i = 0; i < lines; i++) {
+        const y0 = (i + .5) * (H / lines);
+        ctx.beginPath();
+        for (let x = 0; x <= W + step; x += step) {
+          const dx = x - px, dy = y0 - py, dist = Math.sqrt(dx * dx + dy * dy);
+          const near = Math.max(0, 1 - dist / 260);
+          const center = Math.exp(-Math.pow((x - W / 2) / (W * .28), 2));
+          const amp = (6 + 22 * center) * calm + near * 38;
+          const y = y0 + noise(x * .012, i * .35) * amp * (.6 + .4 * Math.sin(t + i));
+          x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        const glitch = Math.random() < .015 * calm;
+        ctx.strokeStyle = glitch ? 'rgba(124,173,190,.85)' : `rgba(163,205,221,${.07 + .1 * Math.abs(Math.sin(i * .7 + t * .5))})`;
+        ctx.lineWidth = glitch ? 1.5 : 1;
+        ctx.stroke();
+      }
+      if (!reduced) requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+  </script>
+
+  <!-- Meta Pixel (mismo ID que la web actual), cargado en segundo plano -->
+  <script>
+    addEventListener('load', () => setTimeout(() => {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init','363467251248997'); fbq('track','PageView');
+    }, 2000));
+  </script>
 </body>
 </html>
