@@ -27,7 +27,7 @@ Formato: WebP (se puede convertir gratis en squoosh.app), calidad ~75.
 | `assets/img/hero.webp` | 1920×1080 | Portada, horizontal (se ve en B/N) |
 | `assets/img/hero-mobile.webp` | 1080×1440 | Portada, recorte vertical para móvil |
 | `assets/img/banda.webp` | 1000×1200 | Foto oficial en "La banda" |
-| `assets/img/releases/versus.webp` | 1000×1000 | Portada del último lanzamiento |
+| `assets/img/releases/<single>.webp` | 1000×1000 recomendado | Portada del último lanzamiento (ahora Distopía) |
 | `assets/img/releases/*.webp` | 600×600 | Portadas de la discografía |
 | `assets/img/og-cover.jpg` | 1200×630 | Imagen al compartir el enlace (JPG) |
 | `assets/img/logo/favicon.svg` | SVG | Icono de pestaña |
