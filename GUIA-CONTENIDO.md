@@ -49,3 +49,13 @@ Las miniaturas de los vídeos las pone YouTube automáticamente.
 ## Versión
 
 En la cabecera aparece la versión (p. ej. `v0.3.0`). En cada cambio se sube en tres sitios de `index.html`: el `<span class="site-version">`, y el `?v=` de `main.css` y `main.js` (esto obliga al navegador a descargar los estilos y scripts nuevos). Si al recargar ves la versión nueva, estás viendo la web actualizada.
+
+## Colores por fase
+
+Los colores salen de `Colores_de_marca.md` (carpeta de materiales) y están en `assets/css/main.css`, bloque «COLORES DE MARCA POR FASE».
+Para cambiar de fase basta con editar el atributo de `<html>` en `index.html` y `404.html`:
+
+- `data-fase="azul"`: fase 1 (desde el 2/11/2026)
+- `data-fase="rojo"`: fase 2
+
+Las fotos no cambian solas: al pasar a la fase roja, sustituye `hero.webp`, `hero-mobile.webp` y `banda.webp` por las versiones rojas.
