@@ -506,3 +506,42 @@ html[data-fase] body{color:var(--text)}
 .discography .card-copy{padding:0}
 .discography .card-copy h3{font-size:19px;line-height:.95;margin:4px 0 8px}
 @media(max-width:600px){.discography .release-grid{grid-template-columns:1fr}}
+
+/* ---------- Próximo videoclip (destacado) ---------- */
+.next-video{position:relative;display:block;color:inherit;border:1px solid rgb(var(--accent-rgb) / .25);border-radius:3px;overflow:hidden}
+.next-video-screen{position:relative;display:block;aspect-ratio:16/9;max-height:78vh;width:100%;
+  background:radial-gradient(ellipse at 50% 45%,rgb(var(--accent-rgb) / .14),transparent 60%),linear-gradient(160deg,var(--abyss),var(--bg) 75%)}
+.next-video-screen:before{content:"";position:absolute;inset:-50%;opacity:.12;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:nv-static .5s steps(4) infinite}
+@keyframes nv-static{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(1%,3%)}}
+.next-video-screen:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 3px),linear-gradient(0deg,rgba(0,0,0,.85),transparent 55%);pointer-events:none}
+.nv-rec{position:absolute;left:24px;top:22px;z-index:2;display:flex;align-items:center;gap:8px;font:700 11px "Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:.2em;color:var(--text)}
+.nv-rec i{width:8px;height:8px;border-radius:50%;background:var(--dot);box-shadow:0 0 10px var(--dot);animation:blink-rec 1.2s steps(2) infinite}
+@keyframes blink-rec{50%{opacity:.15}}
+.nv-time{position:absolute;right:24px;top:22px;z-index:2;font:600 11px "Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:.18em;color:var(--muted)}
+.nv-play{position:absolute;left:50%;top:44%;z-index:2;width:clamp(70px,8vw,104px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;border:1px solid var(--accent);color:var(--accent);background:rgba(0,0,0,.35)}
+.nv-play:before{content:"";position:absolute;inset:-12px;border-radius:50%;border:1px dashed rgb(var(--accent-rgb) / .5);animation:store-spin 14s linear infinite}
+.nv-play svg{width:34%;fill:currentColor;margin-left:6%}
+.nv-progress{position:absolute;left:24px;right:24px;bottom:18px;height:2px;background:rgb(var(--light-rgb) / .15);z-index:2}
+.nv-progress i{position:absolute;inset:0 auto 0 0;width:12%;background:linear-gradient(90deg,var(--main),var(--accent));animation:nv-load 6s ease-in-out infinite alternate}
+@keyframes nv-load{from{width:4%}to{width:22%}}
+.next-video-caption{position:absolute;left:clamp(22px,4vw,48px);bottom:clamp(40px,6vw,70px);z-index:3}
+.next-video-caption .eyebrow{color:var(--accent)}
+.next-video-caption h3{font:900 clamp(44px,6.5vw,96px)/.82 "Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:-.06em;margin:0 0 24px}
+.next-video-caption h3 em{font-style:normal;color:transparent;-webkit-text-stroke:1px var(--accent)}
+.next-video:hover .nv-play{background:var(--accent);color:var(--on-accent)}
+.next-video:hover .button-primary{background:var(--main);border-color:var(--main);color:#fff}
+
+/* ---------- Vídeos anteriores (secundario) ---------- */
+.past-videos{margin-top:clamp(60px,8vw,100px);padding-top:28px;border-top:1px solid var(--line)}
+.video-grid-small{grid-template-columns:repeat(2,minmax(0,1fr))}
+.video-grid-small .video-card{min-height:0;aspect-ratio:16/9}
+.video-grid-small .video-card h3{font-size:26px}
+@media(max-width:700px){
+  .next-video-screen{aspect-ratio:4/5}
+  .next-video-caption{bottom:46px}
+  .nv-play{top:30%}
+  .video-grid-small{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){.next-video-screen:before,.nv-rec i,.nv-play:before,.nv-progress i{animation:none}}
