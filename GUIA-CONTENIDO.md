@@ -29,6 +29,7 @@ Formato: WebP (se puede convertir gratis en squoosh.app), calidad ~75.
 | `assets/img/banda.webp` | 1000×1200 | Foto oficial en "La banda" |
 | `assets/img/releases/<single>.webp` | 1000×1000 recomendado | Portada del último lanzamiento (ahora Distopía) |
 | `assets/img/releases/*.webp` | 600×600 | Portadas de la discografía |
+| `assets/img/merch.webp` | 1200×900 | Foto de producto del bloque de tienda |
 | `assets/img/og-cover.jpg` | 1200×630 | Imagen al compartir el enlace (JPG) |
 | `assets/img/logo/favicon.svg` | SVG | Icono de pestaña |
 | `assets/img/logo/apple-touch-icon.png` | 180×180 | Icono en móviles |
