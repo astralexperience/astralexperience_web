@@ -33,7 +33,8 @@ Formato: WebP (se puede convertir gratis en squoosh.app), calidad ~75.
 | `assets/img/og-cover.jpg` | 1200×630 | Imagen al compartir el enlace (JPG) |
 | `assets/img/logo/favicon.svg` | SVG | Icono de pestaña |
 | `assets/img/logo/apple-touch-icon.png` | 180×180 | Icono en móviles |
-| `assets/img/logo/isotipo.svg` | SVG | Logo de la cabecera (ver comentario en el HTML) |
+| `assets/img/logo/imagotipo.svg` | SVG | Logo de la cabecera (isotipo + logotipo, BLACKDSUN) |
+| `assets/img/logo/isotipo.svg`, `isotipo-contorno.svg`, `logotipo.svg`, `elemento.svg` | SVG | Resto de piezas de marca usadas en la web |
 | `assets/video/hero.mp4` | ≤ 4 MB | Opcional: vídeo de fondo de la portada |
 
 Las miniaturas de los vídeos las pone YouTube automáticamente.

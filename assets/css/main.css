@@ -545,3 +545,15 @@ html[data-fase] body{color:var(--text)}
   .video-grid-small{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){.next-video-screen:before,.nv-rec i,.nv-play:before,.nv-progress i{animation:none}}
+
+/* ---------- Marca (BLACKDSUN) ---------- */
+.brand-logo{display:block;height:30px;width:auto}
+.hero-element{position:absolute;z-index:1;right:-4vw;top:50%;width:min(52vw,760px);height:auto;transform:translateY(-46%);opacity:.32;pointer-events:none;
+  filter:drop-shadow(0 0 22px rgb(var(--accent-rgb) / .35));animation:element-float 14s ease-in-out infinite alternate}
+@keyframes element-float{from{transform:translateY(-48%) rotate(-3deg)}to{transform:translateY(-44%) rotate(3deg)}}
+.intro-symbol{display:grid;place-items:center}
+.intro-symbol img{width:100%;height:auto;opacity:.75;filter:drop-shadow(0 0 18px rgb(var(--accent-rgb) / .35))}
+.footer-brand{display:inline-flex;align-items:center;gap:10px}
+.footer-brand img{opacity:.8}
+@media(max-width:900px){.hero-element{width:90vw;right:-25vw;opacity:.2}}
+@media(prefers-reduced-motion:reduce){.hero-element{animation:none}}
