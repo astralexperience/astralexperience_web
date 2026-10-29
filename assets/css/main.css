@@ -557,3 +557,12 @@ html[data-fase] body{color:var(--text)}
 .footer-brand img{opacity:.8}
 @media(max-width:900px){.hero-element{width:90vw;right:-25vw;opacity:.2}}
 @media(prefers-reduced-motion:reduce){.hero-element{animation:none}}
+/* Isotipo en el próximo lanzamiento (toma el color de acento de la fase) */
+.next-mark{display:block;width:40%;aspect-ratio:842/803;margin-top:-30%;background:var(--accent);
+  -webkit-mask:url(../img/logo/isotipo.svg) center/contain no-repeat;mask:url(../img/logo/isotipo.svg) center/contain no-repeat;stroke:none;fill:none;filter:none}
+.next-bars{bottom:16%}
+/* Logotipo como título de la portada */
+.hero h1.hero-logo{font-size:0;line-height:0;max-width:none}
+.hero-logo img{display:block;width:min(1180px,86vw);height:auto;filter:drop-shadow(0 8px 40px rgba(0,0,0,.5))}
+.hero-bar{display:block;width:24%;height:5px;margin-top:34px;background:linear-gradient(90deg,var(--red),var(--cyan));transform-origin:left;animation:bar-in 1.2s .35s cubic-bezier(.2,.7,.1,1) both}
+@media(prefers-reduced-motion:reduce){.hero-bar{animation:none}}
