@@ -22,7 +22,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="assets/teaser/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/teaser/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     @font-face{font-family:"Barlow Condensed";src:url("assets/teaser/barlow-condensed-600.woff2") format("woff2");font-weight:400 600;font-display:swap}
@@ -33,6 +33,8 @@
     body{font-family:var(--font);overflow:hidden;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
     canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+    .element{position:fixed;left:50%;top:44%;width:min(70vw,640px);transform:translate(-50%,-50%);opacity:.14;pointer-events:none;animation:el 16s ease-in-out infinite alternate}
+    @keyframes el{from{transform:translate(-50%,-50%) rotate(-4deg)}to{transform:translate(-50%,-50%) rotate(4deg)}}
     .vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.85) 100%)}
     .grain{position:fixed;inset:-50%;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1s steps(6) infinite}
     @keyframes grain{0%{transform:translate(0,0)}50%{transform:translate(-4%,3%)}100%{transform:translate(3%,-2%)}}
@@ -71,6 +73,7 @@
 </head>
 <body>
   <canvas id="signal" aria-hidden="true"></canvas>
+  <img class="element" src="assets/teaser/elemento.svg" alt="" aria-hidden="true">
   <div class="grain" aria-hidden="true"></div>
   <div class="vignette" aria-hidden="true"></div>
 

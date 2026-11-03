@@ -43,7 +43,8 @@
     /* Cabecera */
     .head{display:grid;justify-items:center;text-align:center;gap:10px;margin-bottom:8px}
     .mark{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--accent);box-shadow:0 0 30px rgb(var(--accent-rgb) / .25)}
-    .mark svg{width:46%;fill:none;stroke:#fff;stroke-width:6}
+    .mark img{width:46%;height:auto;margin-top:-4%}
+    .logo{margin:6px 0 2px;line-height:0}.logo img{width:min(300px,78vw);height:auto}
     .name{font:900 46px/.85 var(--d);letter-spacing:-.04em}
     .name em{display:block;font-style:normal;color:transparent;-webkit-text-stroke:1px var(--accent)}
     .tag{font:600 12px var(--d);letter-spacing:.26em;color:var(--muted)}
@@ -57,8 +58,8 @@
       background:radial-gradient(ellipse at 85% 20%,rgb(var(--accent-rgb) / .18),transparent 55%),var(--abyss)}
     .feat:after{content:"";position:absolute;left:0;right:0;height:30%;background:linear-gradient(180deg,transparent,rgb(var(--accent-rgb) / .1),transparent);animation:scan 4s linear infinite;pointer-events:none}
     @keyframes scan{from{top:-30%}to{top:100%}}
-    .feat h1{font:900 44px/.84 var(--d);letter-spacing:-.05em;margin:12px 0 14px}
-    .feat h1 em{display:block;font-style:normal;color:transparent;-webkit-text-stroke:1px var(--accent)}
+    .feat .ft{font:900 44px/.84 var(--d);letter-spacing:-.05em;margin:12px 0 14px}
+    .feat .ft em{display:block;font-style:normal;color:transparent;-webkit-text-stroke:1px var(--accent)}
     .bars{position:absolute;right:20px;top:24px;width:96px;height:44px;display:flex;align-items:flex-end;gap:3px}
     .bars i{flex:1;background:linear-gradient(0deg,var(--main),var(--accent));animation:eq 1.1s ease-in-out infinite}
     .bars i:nth-child(2n){animation-duration:.8s}.bars i:nth-child(3n){animation-duration:1.4s;animation-delay:-.3s}.bars i:nth-child(5n){animation-delay:-.7s}
@@ -101,9 +102,8 @@
   <main class="wrap">
 
     <header class="head">
-      <!-- PLACEHOLDER de logo: cuando llegue el isotipo, sustituye el <svg> por <img src="img/isotipo.svg" alt=""> -->
-      <div class="mark" aria-hidden="true"><svg viewBox="0 0 100 90"><path d="M50 8 92 82H8Z"/></svg></div>
-      <p class="name">ASTRAL<em>EXPERIENCE</em></p>
+      <div class="mark" aria-hidden="true"><img src="img/isotipo.svg" alt="" width="842" height="803"></div>
+      <h1 class="logo"><img src="img/logotipo.svg" alt="Astral Experience" width="3518" height="156"></h1>
       <p class="tag">MODERN METAL · VALENCIA</p>
       <nav class="social" aria-label="Redes sociales">
         <a href="https://www.instagram.com/astralexperience" target="_blank" rel="noopener" aria-label="Instagram" data-track="instagram"><svg><use href="#i-ig"/></svg></a>
@@ -122,7 +122,7 @@
     <section class="feat" aria-labelledby="feat-title">
       <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       <p class="eb">PRÓXIMO LANZAMIENTO</p>
-      <h1 id="feat-title">LO NUEVO<em>ESTÁ AL CAER.</em></h1>
+      <h2 id="feat-title" class="ft">LO NUEVO<em>ESTÁ AL CAER.</em></h2>
       <p class="meta">NUEVO SINGLE · FECHA POR DESVELAR</p>
       <a class="btn primary" href="https://www.youtube.com/@AstralExperience?sub_confirmation=1" target="_blank" rel="noopener" data-track="destacado"><svg class="ico"><use href="#i-yt"/></svg>Activa las notificaciones<span class="go">↗</span></a>
     </section>
