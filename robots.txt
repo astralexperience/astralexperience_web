@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin
-Sitemap: www.astralexperience.com/sitemap
+
+Sitemap: https://www.astralexperience.com/sitemap.xml
