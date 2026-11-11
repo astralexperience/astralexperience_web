@@ -1,214 +1,462 @@
 <!doctype html>
-<html lang="es">
+<!-- ═══════════════ FASE DE COLOR ═══════════════
+     data-fase="azul" → fase 1 (desde 2/11/2026, primer videoclip)
+     data-fase="rojo" → fase 2 (segundo videoclip). Cambia también 404.html.
+     ════════════════════════════════════════════════ -->
+<html lang="es" data-fase="azul">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
   <!-- ═════════════════════════════════════════════════════════════════════
-       PÁGINA PROVISIONAL (teaser) mientras se anuncia el cambio de imagen.
-       Fechas y enlaces editables en el bloque CONFIG del <script> final.
+       SEO · Revisa título y descripción cuando cambie el lanzamiento principal.
+       Título: ≤ 60 caracteres. Descripción: 140-160 caracteres.
        ═════════════════════════════════════════════════════════════════════ -->
-  <title>Astral Experience</title>
-  <meta name="description" content="Astral Experience. Algo cambia. 10.11.2026.">
+  <title>Astral Experience — Metal moderno desde Valencia</title>
+  <meta name="description" content="Web oficial de Astral Experience, banda de modern metal de Valencia: djent, metalcore y prog metal con dos voces. Escucha Distopía, Perdón y Némesis, mira los vídeos y consulta los conciertos.">
   <link rel="canonical" href="https://www.astralexperience.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Astral Experience">
   <meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="dark">
+
+  <!-- Open Graph / redes (imagen 1200×630 con URL absoluta) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="Astral Experience">
   <meta property="og:url" content="https://www.astralexperience.com/">
-  <meta property="og:title" content="Astral Experience · 10.11.2026">
-  <meta property="og:description" content="Algo cambia.">
-  <meta property="og:image" content="https://www.astralexperience.com/assets/teaser/og-teaser.jpg">
+  <meta property="og:title" content="Astral Experience — Metal moderno desde Valencia">
+  <meta property="og:description" content="Modern metal desde Valencia. Djent, metalcore y prog metal. Dúo de voces y riffs técnicos.">
+  <meta property="og:image" content="https://www.astralexperience.com/assets/img/og-cover.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Astral Experience">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/teaser/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/teaser/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
-  <style>
-    @font-face{font-family:"Barlow Condensed";src:url("assets/teaser/barlow-condensed-600.woff2") format("woff2");font-weight:400 600;font-display:swap}
-    @font-face{font-family:"Barlow Condensed";src:url("assets/teaser/barlow-condensed-800.woff2") format("woff2");font-weight:700 900;font-display:swap}
-    :root{--bg:#070E13;--accent:#7CADBE;--main:#03586F;--light:#A3CDDD;--text:#fff;--muted:#6f8f9b;--font:"Barlow Condensed","Arial Narrow",sans-serif}
-    *{box-sizing:border-box;margin:0}
-    html,body{height:100%;background:var(--bg);color:var(--text)}
-    body{font-family:var(--font);overflow:hidden;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
-    .element{position:fixed;left:50%;top:44%;width:min(70vw,640px);transform:translate(-50%,-50%);opacity:.14;pointer-events:none;animation:el 16s ease-in-out infinite alternate}
-    @keyframes el{from{transform:translate(-50%,-50%) rotate(-4deg)}to{transform:translate(-50%,-50%) rotate(4deg)}}
-    .vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.85) 100%)}
-    .grain{position:fixed;inset:-50%;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1s steps(6) infinite}
-    @keyframes grain{0%{transform:translate(0,0)}50%{transform:translate(-4%,3%)}100%{transform:translate(3%,-2%)}}
-    main{position:relative;z-index:2;height:100%;display:grid;grid-template-rows:auto 1fr auto;padding:clamp(18px,4vw,48px);pointer-events:none}
-    main a,main button{pointer-events:auto}
-    .top,.bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:600;font-size:11px;letter-spacing:.22em;color:var(--muted)}
-    .sig{display:flex;align-items:center;gap:10px}
-    .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:blink 1.6s steps(2) infinite}
-    @keyframes blink{50%{opacity:.15}}
-    .center{align-self:center;justify-self:center;text-align:center;display:grid;gap:clamp(18px,3vw,34px);justify-items:center}
-    .code{font-weight:800;font-size:clamp(40px,10vw,160px);line-height:.82;letter-spacing:-.03em;text-transform:uppercase;white-space:nowrap}
-    .code .row{display:block}
-    .code .row span{display:inline-block;width:.56em;text-align:center;transition:color .4s}
-    .code .x{color:transparent;-webkit-text-stroke:1px rgba(163,205,221,.45)}
-    .code .k{color:var(--text);text-shadow:0 0 30px rgba(124,173,190,.35)}
-    .claim{font-weight:600;font-size:clamp(13px,1.4vw,16px);letter-spacing:.42em;color:var(--light)}
-    .count{display:flex;gap:clamp(14px,3vw,34px);font-variant-numeric:tabular-nums}
-    .count div{display:grid;justify-items:center;gap:6px}
-    .count b{font-weight:800;font-size:clamp(28px,4.5vw,56px);line-height:1}
-    .count small{font-size:10px;letter-spacing:.24em;color:var(--muted)}
-    .progress{width:min(360px,70vw);height:1px;background:rgba(163,205,221,.18);position:relative}
-    .progress i{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--main),var(--accent))}
-    .note{font-size:11px;letter-spacing:.2em;color:var(--muted)}
-    .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border:1px solid rgba(163,205,221,.35);font-weight:700;font-size:11px;letter-spacing:.18em;transition:.25s}
-    .btn:hover,.btn:focus-visible{border-color:var(--accent);color:var(--accent)}
-    .ico{width:14px;height:14px;fill:currentColor;flex:none;opacity:.9}
-    .btn.primary{background:var(--accent);border-color:var(--accent);color:#000}
-    .btn.primary:hover{background:var(--main);border-color:var(--main);color:#fff}
-    .bottom a:hover{color:var(--text)}
-    :focus-visible{outline:1px solid var(--accent);outline-offset:4px}
-    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-    @media(max-width:600px){.top .hide-m{display:none}.bottom{flex-direction:column;gap:8px}.code{font-size:14.5vw}}
-    @media(prefers-reduced-motion:reduce){.grain,.dot{animation:none}}
-  </style>
+
+  <link rel="icon" href="assets/img/logo/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Rendimiento: fuentes alojadas en la propia web y la imagen de portada con prioridad -->
+  <link rel="preload" href="assets/fonts/barlow-condensed-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/img/hero-mobile.webp" media="(max-width: 47.99rem)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/hero.webp" media="(min-width: 48rem)" fetchpriority="high">
+  <link rel="preconnect" href="https://i.ytimg.com">
+
+  <script>document.documentElement.classList.add('js')</script>
+  <!-- VERSIÓN: súbela en cada cambio aquí, en ?v= de CSS/JS y en la cabecera (fuerza a recargar estilos y scripts) -->
+  <link rel="stylesheet" href="assets/css/main.css?v=1.1.1">
+  <script src="assets/js/main.js?v=1.1.1" defer></script>
+
+  <!-- Datos estructurados de la banda. Los conciertos se añaden solos a partir de la sección #live. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "@id": "https://www.astralexperience.com/#band",
+    "name": "Astral Experience",
+    "url": "https://www.astralexperience.com/",
+    "image": "https://www.astralexperience.com/assets/img/og-cover.jpg",
+    "logo": "https://www.astralexperience.com/assets/img/logo/apple-touch-icon.png",
+    "genre": ["Modern metal", "Djent", "Metalcore", "Prog metal"],
+    "foundingLocation": { "@type": "Place", "name": "Valencia, España" },
+    "email": "management.astralexperience@gmail.com",
+    "member": [
+      { "@type": "OrganizationRole", "roleName": "Guitarra", "member": { "@type": "Person", "name": "Rubén", "sameAs": "https://www.instagram.com/rualmarguitar" } },
+      { "@type": "OrganizationRole", "roleName": "Batería", "member": { "@type": "Person", "name": "Juan", "sameAs": "https://www.instagram.com/juanlahuertaalcantara" } },
+      { "@type": "OrganizationRole", "roleName": "Voz", "member": { "@type": "Person", "name": "Ovidi" } },
+      { "@type": "OrganizationRole", "roleName": "Voz", "member": { "@type": "Person", "name": "Jaime", "sameAs": "https://www.instagram.com/jaiscream" } },
+      { "@type": "OrganizationRole", "roleName": "Bajo", "member": { "@type": "Person", "name": "Jesús", "sameAs": "https://www.instagram.com/jesusparejo_bass" } }
+    ],
+    "recordLabel": { "@type": "Organization", "name": "Art Gates Records", "url": "https://artgatesrecords.com" },
+    "sameAs": [
+      "https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0",
+      "https://www.instagram.com/astralexperience",
+      "https://www.youtube.com/@AstralExperience",
+      "https://www.tiktok.com/@astralexperience",
+      "https://www.facebook.com/astralexperience",
+      "https://www.threads.net/@astralexperience",
+      "https://astralexperience.bandcamp.com"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <canvas id="signal" aria-hidden="true"></canvas>
-  <img class="element" src="assets/teaser/elemento.svg" alt="" aria-hidden="true">
-  <div class="grain" aria-hidden="true"></div>
-  <div class="vignette" aria-hidden="true"></div>
+  <a class="skip" href="#top">Saltar al contenido</a>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
-  <main>
-    <div class="top">
-      <span class="sig"><span class="dot"></span><span data-status>SEÑAL INTERCEPTADA</span></span>
-      <span class="hide-m">39°28′N 0°22′W</span>
-      <span data-pct>000%</span>
-    </div>
+  <!-- ─────────────────────────── CABECERA ─────────────────────────── -->
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Astral Experience, inicio">
+      <!-- Imagotipo oficial (BLACKDSUN). Versiones en assets/img/logo/ -->
+      <img class="brand-logo" src="assets/img/logo/imagotipo.svg" width="160" height="31" alt="Astral Experience">
+      <span class="site-version" title="Versión de la web">v1.1.1</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span>
+    </button>
+    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+      <a href="#music">MÚSICA</a><a href="#live">DIRECTO</a><a href="#experience">LA BANDA</a><a href="#videos">VÍDEOS</a><a href="#store">TIENDA</a><a href="#contact">CONTACTO</a>
+    </nav>
+  </header>
 
-    <div class="center">
-      <h1 class="code" aria-label="Astral Experience">
-        <span class="row" data-word="ASTRAL"></span>
-        <span class="row" data-word="EXPERIENCE"></span>
-      </h1>
-      <p class="claim" data-claim>ALGO CAMBIA</p>
-      <div class="count" data-count aria-live="off">
-        <div><b data-d>00</b><small>DÍAS</small></div>
-        <div><b data-h>00</b><small>HORAS</small></div>
-        <div><b data-m>00</b><small>MIN</small></div>
-        <div><b data-s>00</b><small>SEG</small></div>
+  <main id="top">
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         PORTADA
+         ════════════════════════════════════════════════════════════════════ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- PLACEHOLDER: foto principal. hero.webp 1920×1080 (horizontal) y hero-mobile.webp 1080×1440 (vertical).
+           Se muestra en blanco y negro y semitransparente, como fondo.
+           VÍDEO OPCIONAL: sube assets/video/hero.mp4 (≤ 4 MB, sin audio, 10-20 s en bucle) y añade
+           data-src="assets/video/hero.mp4" al <video>. Sin ese atributo no se descarga nada. -->
+      <div class="hero-media" aria-hidden="true">
+        <picture>
+          <source media="(min-width: 48rem)" srcset="assets/img/hero.webp" width="1920" height="1080">
+          <img src="assets/img/hero-mobile.webp" width="1080" height="1440" alt="" fetchpriority="high" decoding="async">
+        </picture>
+        <video muted loop playsinline preload="none" data-hero-video></video>
       </div>
-      <div class="progress" aria-hidden="true"><i data-bar></i></div>
-      <p class="note" data-note>10.11.2026 · EL MENSAJE SE DESCIFRA CADA DÍA</p>
-      <div class="cta">
-        <a class="btn primary" href="https://www.instagram.com/astralexperience" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>SÍGUENOS EN INSTAGRAM ↗</a>
-        <a class="btn" href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>SPOTIFY ↗</a>
-        <a class="btn" href="https://www.youtube.com/@AstralExperience" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YOUTUBE ↗</a>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <img class="hero-element" src="assets/img/logo/elemento.svg" alt="" aria-hidden="true" width="1430" height="1403" decoding="async">
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> VALENCIA · SPAIN · MODERN METAL</p>
+        <h1 id="hero-title" class="hero-logo"><img src="assets/img/logo/logotipo.svg" alt="Astral Experience" width="3518" height="156" fetchpriority="high"><span class="hero-bar" aria-hidden="true"></span></h1>
+        <div class="hero-bottom">
+          <p>MODERN METAL<br>DJENT / METALCORE / PROG METAL</p>
+          <a class="circle-link" href="#music" aria-label="Descubrir la música"><span aria-hidden="true">↓</span></a>
+        </div>
       </div>
-    </div>
+      <div class="hero-side" aria-hidden="true">AE / 001</div><div class="scroll-label" aria-hidden="true">SCROLL TO EXPERIENCE</div>
+      <!-- EDITABLE · texto del aviso superior de la portada -->
+      <a class="hero-listen" href="#music"><span class="live-dot"></span> ESCUCHA LO ÚLTIMO <span aria-hidden="true">↘</span></a>
+    </section>
 
-    <div class="bottom">
-      <span>© <span data-year>2026</span> ASTRAL EXPERIENCE · VALENCIA</span>
-      <span><a href="mailto:management.astralexperience@gmail.com">CONTACTO</a></span>
-    </div>
+    <!-- ════════════════════════════════════════════════════════════════════
+         01 · INTRO
+         ════════════════════════════════════════════════════════════════════ -->
+    <section class="intro section-pad" aria-labelledby="intro-title">
+      <div class="section-index" aria-hidden="true">01</div>
+      <div class="intro-copy reveal">
+        <!-- ═══════════════ EDITABLE · INTRO ═══════════════ -->
+        <p class="eyebrow">EL SONIDO</p>
+        <h2 id="intro-title">DOS VOCES.<br><span>UN MISMO PESO.</span></h2>
+        <p class="lead">Desde Valencia construimos un sonido donde la combinación de dos voces con rangos muy dispares convive con guitarras técnicas, una base sólida y una producción orientada al metal moderno.</p>
+        <!-- ═══════════════ FIN EDITABLE · INTRO ═══════════════ -->
+      </div>
+      <div class="intro-symbol" aria-hidden="true"><img src="assets/img/logo/isotipo-contorno.svg" alt="" width="856" height="815" loading="lazy"></div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         02 · MÚSICA
+         ════════════════════════════════════════════════════════════════════ -->
+    <section id="music" class="music section-pad" aria-labelledby="music-title">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">02 / MÚSICA</p><h2 id="music-title">RELEASES<span class="red-dot">.</span></h2></div>
+        <a class="text-link" href="https://artgatesrecords.com/store/es/astral-experience" target="_blank" rel="noopener">TIENDA OFICIAL ↗</a>
+      </div>
+
+      <!-- ═══════════════ EDITABLE · PRÓXIMO LANZAMIENTO ═══════════════
+           Bloque destacado mientras no se pueda nombrar el single.
+           El día del anuncio (o de la salida) se sustituye por la portada, el título y los enlaces del single.
+           ═════════════════════════════════════════════════════════════ -->
+      <article class="next-release reveal">
+        <div class="next-art" aria-hidden="true">
+          <span class="next-mark"></span>
+          <div class="next-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="next-stamp">AE—07</span>
+          <span class="next-redacted">███████ · 2026</span>
+        </div>
+        <div class="next-info">
+          <p class="eyebrow"><span></span> PRÓXIMO LANZAMIENTO</p>
+          <h3>LO NUEVO<br><em>ESTÁ AL CAER.</em></h3>
+          <div class="release-meta"><span>NUEVO SINGLE</span><span>FECHA POR DESVELAR</span></div>
+          <div class="actions">
+            <a class="button button-primary" href="https://www.instagram.com/astralexperience" target="_blank" rel="noopener">ENTÉRATE EL PRIMERO ↗</a>
+            <a class="button" href="#discografia">ESCUCHAR LO ANTERIOR ↓</a>
+          </div>
+        </div>
+      </article>
+      <!-- ═══════════════ FIN EDITABLE · PRÓXIMO LANZAMIENTO ═══════════════ -->
+
+      <!-- ═══════════════ EDITABLE · DISCOGRAFÍA ═══════════════
+           Un <article> por lanzamiento, del más reciente al más antiguo.
+           Portadas cuadradas 600×600 WebP en assets/img/releases/.
+           En href pon el enlace directo del single en Spotify (o el enlace inteligente).
+           ══════════════════════════════════════════════════════ -->
+      <div class="discography" id="discografia">
+        <div class="discography-head">
+          <p class="eyebrow">MIENTRAS ESPERAS</p>
+          <h3>PONTE AL DÍA<span class="red-dot">.</span></h3>
+        </div>
+        <div class="release-grid">
+        <article class="release-card reveal">
+          <div class="mini-art"><img src="assets/img/releases/distopia.webp" width="600" height="600" loading="lazy" decoding="async" alt="Portada de Distopía"></div>
+          <div class="card-copy"><span>SINGLE</span><h3>DISTOPÍA</h3><a href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener">ESCUCHAR ↗</a></div>
+        </article>
+        <article class="release-card reveal">
+          <div class="mini-art"><img src="assets/img/releases/perdon.webp" width="600" height="600" loading="lazy" decoding="async" alt="Portada de Perdón"></div>
+          <div class="card-copy"><span>SINGLE</span><h3>PERDÓN</h3><a href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener">ESCUCHAR ↗</a></div>
+        </article>
+        <article class="release-card reveal">
+          <div class="mini-art"><img src="assets/img/releases/nemesis.webp" width="600" height="600" loading="lazy" decoding="async" alt="Portada de Némesis"></div>
+          <div class="card-copy"><span>SINGLE</span><h3>NÉMESIS</h3><a href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener">ESCUCHAR ↗</a></div>
+        </article>
+        <article class="release-card reveal">
+          <div class="mini-art"><img src="assets/img/releases/rincon.webp" width="600" height="600" loading="lazy" decoding="async" alt="Portada de El rincón del miedo"></div>
+          <div class="card-copy"><span>SINGLE</span><h3>EL RINCÓN DEL MIEDO</h3><a href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener">ESCUCHAR ↗</a></div>
+        </article>
+        </div>
+      </div>
+      <!-- ═══════════════ FIN EDITABLE · DISCOGRAFÍA ═══════════════ -->
+
+      <!-- ═══════════════ EDITABLE · REPRODUCTOR DE SPOTIFY ═══════════════
+           Ahora muestra el perfil de artista (se actualiza solo con lo más escuchado).
+           Para fijar un single o álbum, cambia data-src por:
+             https://open.spotify.com/embed/track/ID_DE_LA_CANCION?theme=0
+             https://open.spotify.com/embed/album/ID_DEL_ALBUM?theme=0
+           (el ID es la parte final del enlace "Compartir" de Spotify).
+           El reproductor solo se carga cuando el visitante llega a esta zona.
+           ═════════════════════════════════════════════════════════════════ -->
+      <div class="player reveal">
+        <div class="player-head"><span class="live-dot"></span><p class="eyebrow">ESCUCHA AHORA / SPOTIFY</p></div>
+        <div class="player-frame" data-spotify data-src="https://open.spotify.com/embed/artist/5CzccUc35KuvkdlFZDBaW0?theme=0">
+          <a class="player-fallback" href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener">ABRIR EN SPOTIFY ↗</a>
+        </div>
+      </div>
+      <!-- ═══════════════ FIN EDITABLE · REPRODUCTOR DE SPOTIFY ═══════════════ -->
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         03 · DIRECTO
+         ════════════════════════════════════════════════════════════════════ -->
+    <section id="live" class="live section-pad" aria-labelledby="live-title">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">03 / EN DIRECTO</p><h2 id="live-title">LIVE<span class="red-dot">.</span></h2></div>
+        <a class="text-link" href="#contact">BOOKING / CONTRATACIÓN ↗</a>
+      </div>
+
+      <!-- ═══════════════ EDITABLE · CONCIERTOS ═══════════════
+           Un <article> por concierto, en cualquier orden.
+           data-date="AAAA-MM-DD" es obligatorio: la web ordena las fechas y mueve sola
+           las ya celebradas a "Conciertos anteriores".
+           Entradas: pon el enlace en href; con href="#" la flecha no se muestra.
+           Los datos para Google (eventos) se generan automáticamente desde esta lista:
+           mantén las clases show-city, show-venue y show-bands.
+           ══════════════════════════════════════════════════════ -->
+      <div class="show-list" data-shows>
+        <article class="show-row" data-date="2026-10-30" data-time="21:00">
+          <div class="show-date"><strong>30</strong><span>OCT</span><small>2026</small></div>
+          <div class="show-main"><span><b class="show-city">VALENCIA</b> · <b class="show-venue">PETER ROCK</b> · CIERRE DEL TOUR '25–'26</span><h3 class="show-bands">ASTRAL EXPERIENCE + THE THIRD GRADE + GRIZZLY LIZZARDS</h3></div>
+          <div class="show-info"><span>21:00 H</span><strong>12 € ANT. / 15 € TAQ.</strong></div>
+          <a class="show-arrow" href="#" target="_blank" rel="noopener" aria-label="Entradas para Valencia">↗</a>
+        </article>
+        <article class="show-row" data-date="2026-09-05">
+          <div class="show-date"><strong>05</strong><span>SEP</span><small>2026</small></div>
+          <div class="show-main"><span><b class="show-city">VITORIA-GASTEIZ</b> · <b class="show-venue">URBAN ROCK CONCEPT</b></span><h3 class="show-bands">ASTRAL EXPERIENCE + I SEE EXPLOSIONS + CAVAN</h3></div>
+          <div class="show-info"></div>
+          <a class="show-arrow" href="#" target="_blank" rel="noopener" aria-label="Entradas para Vitoria-Gasteiz">↗</a>
+        </article>
+        <article class="show-row" data-date="2026-09-04">
+          <div class="show-date"><strong>04</strong><span>SEP</span><small>2026</small></div>
+          <div class="show-main"><span><b class="show-city">ZARAGOZA</b> · <b class="show-venue">UTOPÍA</b></span><h3 class="show-bands">ASTRAL EXPERIENCE + ARIDAY</h3></div>
+          <div class="show-info"></div>
+          <a class="show-arrow" href="#" target="_blank" rel="noopener" aria-label="Entradas para Zaragoza">↗</a>
+        </article>
+        <article class="show-row" data-date="2026-04-02">
+          <div class="show-date"><strong>02</strong><span>ABR</span><small>2026</small></div>
+          <div class="show-main"><span><b class="show-city">MADRID</b> · <b class="show-venue">ROCKVILLE</b></span><h3 class="show-bands">ASTRAL EXPERIENCE + OPERA MAGNA</h3></div>
+          <div class="show-info"></div>
+          <a class="show-arrow" href="#" target="_blank" rel="noopener" aria-label="Entradas para Madrid">↗</a>
+        </article>
+        <article class="show-row" data-date="2025-10-03">
+          <div class="show-date"><strong>03</strong><span>OCT</span><small>2025</small></div>
+          <div class="show-main"><span><b class="show-city">VALENCIA</b></span><h3 class="show-bands">ASTRAL EXPERIENCE + MORTI + HOUSE OF DAWN</h3></div>
+          <div class="show-info"></div>
+          <a class="show-arrow" href="#" target="_blank" rel="noopener" aria-label="Entradas para Valencia">↗</a>
+        </article>
+        <article class="show-row" data-date="2025-09-12">
+          <div class="show-date"><strong>12</strong><span>SEP</span><small>2025</small></div>
+          <div class="show-main"><span><b class="show-city">MADRID</b></span><h3 class="show-bands">ASTRAL EXPERIENCE + MORTI + HOUSE OF DAWN</h3></div>
+          <div class="show-info"></div>
+          <a class="show-arrow" href="#" target="_blank" rel="noopener" aria-label="Entradas para Madrid">↗</a>
+        </article>
+      </div>
+      <!-- ═══════════════ FIN EDITABLE · CONCIERTOS ═══════════════ -->
+
+      <p class="empty-note reveal">TOUR '25–'26: 13 CONCIERTOS. MÁS FECHAS PRÓXIMAMENTE.</p>
+
+      <details class="past-shows" data-past hidden>
+        <summary>CONCIERTOS ANTERIORES</summary>
+        <div class="show-list show-list-past" data-past-list></div>
+      </details>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         04 · LA BANDA
+         ════════════════════════════════════════════════════════════════════ -->
+    <section id="experience" class="experience" aria-labelledby="band-title">
+      <!-- PLACEHOLDER: foto oficial de la banda, vertical 1000×1200 WebP -->
+      <figure class="experience-image">
+        <img src="assets/img/banda.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Astral Experience, foto oficial">
+        <figcaption class="image-label">FORM / TENSION / RELEASE</figcaption>
+      </figure>
+      <div class="experience-content section-pad reveal">
+        <p class="eyebrow">04 / LA BANDA</p>
+        <h2 id="band-title">METAL<br><span>EN ESPAÑOL.</span></h2>
+
+        <!-- ═══════════════ EDITABLE · BIOGRAFÍA ═══════════════
+             Texto de la biografía de Spotify (02_Plataformas/Spotify), para mantener un mismo mensaje en todas partes. -->
+        <p>Astral Experience es una banda de modern metal de Valencia que combina djent, metalcore y prog metal con una identidad basada en la combinación de dos voces con rangos muy dispares y una instrumentación técnica.</p>
+        <p>Aquí conviven riffs precisos, melodías y la intensidad que llevamos al directo: canciones pensadas para sonar igual de fuertes en estudio y sobre el escenario.</p>
+        <!-- ═══════════════ FIN EDITABLE · BIOGRAFÍA ═══════════════ -->
+
+        <!-- ═══════════════ EDITABLE · FORMACIÓN ═══════════════
+             Un <div> por miembro: nombre (<dt>), instrumento (<dd>) y, si tiene, su Instagram. -->
+        <dl class="lineup">
+          <div><dt>RUBÉN</dt><dd>GUITARRA</dd><dd class="lineup-ig"><a href="https://www.instagram.com/rualmarguitar" target="_blank" rel="noopener">@rualmarguitar</a></dd></div>
+          <div><dt>JUAN</dt><dd>BATERÍA</dd><dd class="lineup-ig"><a href="https://www.instagram.com/juanlahuertaalcantara" target="_blank" rel="noopener">@juanlahuertaalcantara</a></dd></div>
+          <div><dt>OVIDI</dt><dd>VOZ</dd></div>
+          <div><dt>JAIME</dt><dd>VOZ</dd><dd class="lineup-ig"><a href="https://www.instagram.com/jaiscream" target="_blank" rel="noopener">@jaiscream</a></dd></div>
+          <div><dt>JESÚS</dt><dd>BAJO</dd><dd class="lineup-ig"><a href="https://www.instagram.com/jesusparejo_bass" target="_blank" rel="noopener">@jesusparejo_bass</a></dd></div>
+        </dl>
+        <!-- ═══════════════ FIN EDITABLE · FORMACIÓN ═══════════════ -->
+
+        <div class="coordinates">39°28′N&nbsp;&nbsp; 0°22′W <span>ART GATES RECORDS / VALENCIA, SPAIN</span></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         05 · VÍDEOS
+         ════════════════════════════════════════════════════════════════════ -->
+    <section id="videos" class="videos section-pad" aria-labelledby="videos-title">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">05 / AUDIOVISUAL</p><h2 id="videos-title">WATCH<span class="red-dot">.</span></h2></div>
+        <a class="text-link" href="https://www.youtube.com/@AstralExperience" target="_blank" rel="noopener">CANAL DE YOUTUBE ↗</a>
+      </div>
+
+      <!-- ═══════════════ EDITABLE · PRÓXIMO VIDEOCLIP ═══════════════
+           Bloque destacado mientras el videoclip no se pueda mostrar.
+           El día del estreno se sustituye por una tarjeta de vídeo normal (como las de abajo)
+           con el ID de YouTube del videoclip.
+           ══════════════════════════════════════════════════════════════ -->
+      <a class="next-video reveal" href="https://www.youtube.com/@AstralExperience?sub_confirmation=1" target="_blank" rel="noopener">
+        <div class="next-video-screen" aria-hidden="true">
+          <span class="nv-rec"><i></i>REC</span>
+          <span class="nv-time">00:00 / ██:██</span>
+          <span class="nv-play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+          <span class="nv-progress"><i></i></span>
+        </div>
+        <div class="next-video-caption">
+          <p class="eyebrow"><span></span> PRÓXIMO VIDEOCLIP</p>
+          <h3>LO PRÓXIMO<br><em>YA ESTÁ RODADO.</em></h3>
+          <span class="button button-primary">ACTIVA LAS NOTIFICACIONES ↗</span>
+        </div>
+      </a>
+      <!-- ═══════════════ FIN EDITABLE · PRÓXIMO VIDEOCLIP ═══════════════ -->
+
+      <!-- ═══════════════ EDITABLE · VÍDEOS ANTERIORES ═══════════════
+           data-yt = ID del vídeo (lo que va tras "watch?v=" en el enlace de YouTube);
+           cambia también el href con el mismo ID.
+           La miniatura la pone YouTube automáticamente. Si quieres una propia, añade
+           data-thumb="assets/img/videos/archivo.webp" (1200×800).
+           El vídeo se reproduce dentro de la web solo al pulsar (no ralentiza la carga).
+           ══════════════════════════════════════════════════ -->
+      <div class="past-videos">
+        <div class="discography-head">
+          <p class="eyebrow">VIDEOCLIPS ANTERIORES</p>
+          <h3>VUELVE A VERLOS<span class="red-dot">.</span></h3>
+        </div>
+        <div class="video-grid video-grid-small">
+          <a class="video-card reveal" href="https://www.youtube.com/watch?v=HKH8GMUi9Sg" data-yt="HKH8GMUi9Sg" target="_blank" rel="noopener">
+            <div class="video-bg"><span class="play" aria-hidden="true">▶</span></div>
+            <div class="video-caption"><span>VIDEOCLIP</span><h3>DISTOPÍA</h3></div>
+          </a>
+          <a class="video-card reveal" href="https://www.youtube.com/watch?v=YtnCqbn9QDs" data-yt="YtnCqbn9QDs" target="_blank" rel="noopener">
+            <div class="video-bg"><span class="play" aria-hidden="true">▶</span></div>
+            <div class="video-caption"><span>VIDEOCLIP</span><h3>EL RINCÓN DEL MIEDO</h3></div>
+          </a>
+        </div>
+      </div>
+      <!-- ═══════════════ FIN EDITABLE · VÍDEOS ═══════════════ -->
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         06 · TIENDA
+         ════════════════════════════════════════════════════════════════════ -->
+    <!-- ═══════════════ EDITABLE · TIENDA ═══════════════
+         Enlace a la tienda oficial (Art Gates Records). Foto de producto: assets/img/merch.webp (1200×900, WebP).
+         ══════════════════════════════════════════════════ -->
+    <section id="store" class="store" aria-labelledby="store-title">
+      <div class="store-marquee" aria-hidden="true">
+        <div class="store-marquee-track">
+          <span>MERCH OFICIAL</span><span>ASTRAL EXPERIENCE</span><span>OFFICIAL STORE</span><span>MERCH OFICIAL</span><span>ASTRAL EXPERIENCE</span><span>OFFICIAL STORE</span>
+          <span>MERCH OFICIAL</span><span>ASTRAL EXPERIENCE</span><span>OFFICIAL STORE</span><span>MERCH OFICIAL</span><span>ASTRAL EXPERIENCE</span><span>OFFICIAL STORE</span>
+        </div>
+      </div>
+      <a class="store-card section-pad reveal" href="https://artgatesrecords.com/store/es/astral-experience" target="_blank" rel="noopener">
+        <div class="store-copy">
+          <p class="eyebrow">06 / TIENDA</p>
+          <h2 id="store-title">MERCH<span class="red-dot">.</span><br><em>OFICIAL</em></h2>
+          <span class="button button-primary store-cta">IR A LA TIENDA ↗</span>
+          <small class="store-note">ART GATES RECORDS / OFFICIAL STORE</small>
+        </div>
+        <div class="store-visual">
+          <img src="assets/img/merch.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Merchandising oficial de Astral Experience">
+          <svg class="store-badge" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="badge-circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+            <text><textPath href="#badge-circle" textLength="486" lengthAdjust="spacing">OFFICIAL STORE · MERCH OFICIAL · </textPath></text>
+            <path d="M100 66 130 122H70Z" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+      </a>
+    </section>
+    <!-- ═══════════════ FIN EDITABLE · TIENDA ═══════════════ -->
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         07 · CONTACTO
+         ════════════════════════════════════════════════════════════════════ -->
+    <section id="contact" class="contact section-pad" aria-labelledby="contact-title">
+      <div class="section-index" aria-hidden="true">07</div>
+      <div class="contact-inner reveal">
+        <p class="eyebrow">BOOKING / CONTACTO</p>
+        <h2 id="contact-title">LET'S MAKE<br><em>SOME NOISE.</em></h2>
+        <a class="email-link" href="mailto:management.astralexperience@gmail.com">management.astralexperience@gmail.com <span aria-hidden="true">↗</span></a>
+        <div class="socials">
+          <a href="https://www.instagram.com/astralexperience" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+          <a href="https://www.youtube.com/@AstralExperience" target="_blank" rel="noopener">YOUTUBE ↗</a>
+          <a href="https://open.spotify.com/artist/5CzccUc35KuvkdlFZDBaW0" target="_blank" rel="noopener">SPOTIFY ↗</a>
+          <a href="https://www.tiktok.com/@astralexperience" target="_blank" rel="noopener">TIKTOK ↗</a>
+          <a href="https://www.facebook.com/astralexperience" target="_blank" rel="noopener">FACEBOOK ↗</a>
+          <a href="https://www.threads.net/@astralexperience" target="_blank" rel="noopener">THREADS ↗</a>
+          <a href="https://astralexperience.bandcamp.com" target="_blank" rel="noopener">BANDCAMP ↗</a>
+          <!-- EDITABLE · pon aquí el enlace de invitación al canal de difusión de Instagram (con href="#" no se muestra) -->
+          <a href="#" target="_blank" rel="noopener">CANAL DE INSTAGRAM ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ OPCIONAL · MAILING LIST (desactivada) ═══════════════
+         Cuando tengáis plataforma de mailing (Brevo, MailerLite, Mailchimp…), sustituye
+         ACTION_URL por la URL de formulario que os dé y quita estas marcas de comentario.
+    <section class="newsletter section-pad" aria-labelledby="nl-title">
+      <p class="eyebrow">LISTA DE CORREO</p>
+      <h2 id="nl-title">ENTÉRATE<br><span>ANTES QUE NADIE.</span></h2>
+      <form class="nl-form" action="ACTION_URL" method="post" target="_blank">
+        <label for="nl-email">TU CORREO</label>
+        <input id="nl-email" type="email" name="EMAIL" autocomplete="email" required>
+        <button class="button button-primary" type="submit">APUNTARME</button>
+      </form>
+    </section>
+    ═══════════════ FIN OPCIONAL · MAILING LIST ═══════════════ -->
   </main>
 
-  <script>
-  (() => {
-    /* ═══════════════ CONFIG (editable) ═══════════════
-       START: cuándo empieza a descifrarse el nombre (0 %): sale online el 1/11 a las 10:00.
-       END:   final de la cuenta atrás y nombre completo (100 %): 10/11 (H4, web final).
-              Ajusta la hora cuando se fije la de H4.                          */
-    const START = new Date('2026-11-01T10:00:00+01:00');
-    const END   = new Date('2026-11-10T00:00:00+01:00');
-    /* ═════════════════════════════════════════════════ */
-
-    const $ = (s) => document.querySelector(s);
-    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const GLYPHS = '#%&/<>[]{}=+*?!$@0123456789';
-
-    /* ---- Nombre cifrado: cada día se revelan más letras, siempre en el mismo orden ---- */
-    const cells = [];
-    document.querySelectorAll('[data-word]').forEach((row) => {
-      [...row.dataset.word].forEach((ch) => {
-        const s = document.createElement('span');
-        s.textContent = ch; s.className = 'x'; s.setAttribute('aria-hidden', 'true');
-        row.append(s); cells.push({ el: s, ch });
-      });
-    });
-    let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
-    // Letras fijas desde el primer día (posición dentro de "ASTRALEXPERIENCE"): A·L / E·X·N
-    const PINNED = [0, 5, 6, 7, 13];
-    const rest = cells.map((_, i) => i).filter((i) => !PINNED.includes(i)).sort(() => rnd() - .5);
-    const order = [...PINNED, ...rest];
-
-    const pad = (n) => String(n).padStart(2, '0');
-    let progress = 0;
-    function tick() {
-      const now = Date.now();
-      progress = Math.min(1, Math.max(0, (now - START) / (END - START)));
-      const shown = PINNED.length + Math.round(progress * rest.length);
-      const open = new Set(order.slice(0, shown));
-      cells.forEach((c, i) => {
-        if (open.has(i)) { c.el.textContent = c.ch; c.el.className = 'k'; }
-        else { c.el.className = 'x'; c.el.textContent = reduced ? '#' : GLYPHS[Math.floor(Math.random() * GLYPHS.length)]; }
-      });
-      $('[data-pct]').textContent = String(Math.floor(progress * 100)).padStart(3, '0') + '%';
-      $('[data-bar]').style.width = (progress * 100) + '%';
-      let left = Math.max(0, END - now);
-      const d = Math.floor(left / 864e5); left -= d * 864e5;
-      const h = Math.floor(left / 36e5); left -= h * 36e5;
-      const m = Math.floor(left / 6e4); left -= m * 6e4;
-      $('[data-d]').textContent = pad(d); $('[data-h]').textContent = pad(h);
-      $('[data-m]').textContent = pad(m); $('[data-s]').textContent = pad(Math.floor(left / 1e3));
-    }
-    tick(); setInterval(tick, reduced ? 1000 : 120);
-    $('[data-year]').textContent = new Date().getFullYear();
-
-    /* ---- Señal: líneas de interferencia que reaccionan al cursor o al dedo ---- */
-    const cv = $('#signal'), ctx = cv.getContext('2d');
-    let W = 0, H = 0, dpr = 1, px = -1e4, py = -1e4, t = 0, running = true;
-    const resize = () => { dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
-    resize(); addEventListener('resize', resize);
-    const move = (x, y) => { px = x; py = y; };
-    addEventListener('pointermove', (e) => move(e.clientX, e.clientY), { passive: true });
-    addEventListener('pointerleave', () => move(-1e4, -1e4));
-    addEventListener('touchmove', (e) => { const p = e.touches[0]; if (p) move(p.clientX, p.clientY); }, { passive: true });
-    document.addEventListener('visibilitychange', () => { running = !document.hidden; if (running && !reduced) requestAnimationFrame(draw); });
-
-    function noise(x, y) { return Math.sin(x * 1.7 + y * 3.1) * .5 + Math.sin(x * .6 - y * 1.3 + t * .7) * .35 + Math.sin(x * 3.3 + t * 1.9) * .15; }
-    function draw() {
-      if (!running) return;
-      t += .016;
-      ctx.clearRect(0, 0, W, H);
-      const lines = Math.round(H / 14), step = Math.max(6, W / 160);
-      const calm = .25 + .75 * (1 - progress); // cuanto más cerca del día, más limpia la señal
-      for (let i = 0; i < lines; i++) {
-        const y0 = (i + .5) * (H / lines);
-        ctx.beginPath();
-        for (let x = 0; x <= W + step; x += step) {
-          const dx = x - px, dy = y0 - py, dist = Math.sqrt(dx * dx + dy * dy);
-          const near = Math.max(0, 1 - dist / 260);
-          const center = Math.exp(-Math.pow((x - W / 2) / (W * .28), 2));
-          const amp = (6 + 22 * center) * calm + near * 38;
-          const y = y0 + noise(x * .012, i * .35) * amp * (.6 + .4 * Math.sin(t + i));
-          x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-        }
-        const glitch = Math.random() < .015 * calm;
-        ctx.strokeStyle = glitch ? 'rgba(124,173,190,.85)' : `rgba(163,205,221,${.07 + .1 * Math.abs(Math.sin(i * .7 + t * .5))})`;
-        ctx.lineWidth = glitch ? 1.5 : 1;
-        ctx.stroke();
-      }
-      if (!reduced) requestAnimationFrame(draw);
-    }
-    draw();
-  })();
-  </script>
-
-  <!-- Meta Pixel (mismo ID que la web actual), cargado en segundo plano -->
-  <script>
-    addEventListener('load', () => setTimeout(() => {
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init','363467251248997'); fbq('track','PageView');
-    }, 2000));
-  </script>
+  <footer class="site-footer">
+    <span class="footer-brand"><img src="assets/img/logo/isotipo.svg" alt="" width="18" height="17">© <span data-year>2026</span> ASTRAL EXPERIENCE</span>
+    <span>VALENCIA / SPAIN</span>
+    <a href="#top">VOLVER ARRIBA ↑</a>
+  </footer>
 </body>
 </html>
